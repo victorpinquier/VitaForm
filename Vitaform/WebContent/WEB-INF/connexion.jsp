@@ -10,26 +10,20 @@
     </head>
     
     <body>
-        <form method="post" action="connexion">
+		
+        <form id="ConnexionForm" method="post" action="connexion">
             <fieldset>
 
                 <legend>Connexion</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>
 
-                <label for="nom">Adresse email </label>
-                <input type="email" id="email" name="email" value="" size="20" maxlength="60" />
-                <span class="erreur">${form.erreurs['email']}</span>
-                <br>
+				<label for="mail">Adresse mail : </label> <input type="email" id="mail" name="mail" value="" maxlength="60" /><br>
 
-                <label for="motdepasse">Mot de passe </label>
-                <input type="password" id="motdepasse" name="motdepasse" value="" size="20" maxlength="20" />
-                <span class="erreur">${form.erreurs['motdepasse']}</span>
-                <br>
+				<label for="mdp">Mot de passe : </label> <input type="password" id="mdp" name="mdp" maxlength="20"><br>
 
-                <input type="submit" value="Connexion" class="sansLabel" />
-                <br>
-
-                <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
+	            <input type="submit" value="Valider"><br>
+	            
+	            <p> <span class="erreur">${form.erreurs['etat']}</span></p>
 
             </fieldset>
 
