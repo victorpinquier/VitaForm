@@ -1,3 +1,10 @@
-Formulaire d'ajout de valeurs possibles à un attribut
-	Formulaire - Victor
-	Procédure de modification de contrainte
+Historique poids patient :
+	- Procedure d'effacement des données apres une certaine periode
+
+A voir avec client :
+	- Entretien initial : "devient ancienneté dans les stats" ?
+	- PatientMesures : T.A ?
+	- PatientPhysique : QAPs ?
+	- Patient psychologique : Test de Scoff ?
+	- Indice FINDRISK ?
+	- PatientObectif : Orientation Vitaform, liste déroulante ? choix mutliple ? (Orientation SIMMPS, Orientation externe)
