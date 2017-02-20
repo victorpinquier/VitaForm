@@ -40,8 +40,16 @@ Preciser text,
 MedecinTraitant boolean,
 MedecinTraitantDetails text,
 AutresSuivis text,
-PRIMARY KEY (IdPatient)
+PRIMARY KEY (IdPatient),
+FOREIGN KEY (Faculte) REFERENCES PatientFaculteValues(idvalues),
+FOREIGN KEY (Cursus) REFERENCES CursusValues(idvalues),
+FOREIGN KEY (OrigineFamiliale) REFERENCES OrigineFamilialeValues(idvalues),
+FOREIGN KEY (SituationFamiliale) REFERENCES SituationFamilialeValues(idvalues),
+FOREIGN KEY (LieuDeVie) REFERENCES LieuDeVieValues(idvalues),
+FOREIGN KEY (Bourse) REFERENCES BoursesValues(idvalues),
+FOREIGN KEY (Orientation) REFERENCES OrientationValues(idvalues)
 );
+
 DROP TABLE DossierMedical;
 CREATE TABLE DossierMedical
 (
@@ -129,7 +137,8 @@ NombreFruitsEtLegumes nvarchar(255),
 Autre text,
 ComportementAlimentaire text,
 PRIMARY KEY (IdNutrition),
-FOREIGN KEY (IdNutrition) REFERENCES Patient(IdPatient)
+FOREIGN KEY (IdNutrition) REFERENCES Patient(IdPatient),
+FOREIGN KEY (PrisePetitDejeuner) REFERENCES PrisePetitDejeunerValues(idvalue)
 );
 
 DROP TABLE PatientPhysique;
@@ -140,7 +149,8 @@ Marche boolean,
 QAP nvarchar(255),
 Resultats nvarchar(255),
 PRIMARY KEY (IdPhysique),
-FOREIGN KEY (IdPhysique) REFERENCES Patient(IdPatient)
+FOREIGN KEY (IdPhysique) REFERENCES Patient(IdPatient),
+FOREIGN KEY (Resultats) REFERENCES ResultatsValues(idvalue)
 );
 
 DROP TABLE PatientPsychologique;
@@ -173,7 +183,10 @@ OrientationVitaform nvarchar(255),
 OrientationSimpss nvarchar(255),
 OrientationExterne nvarchar(255),
 PRIMARY KEY (IdObjectif),
-FOREIGN KEY (IdObjectif) REFERENCES Patient(IdPatient)
+FOREIGN KEY (IdObjectif) REFERENCES Patient(IdPatient),
+FOREIGN KEY (OrientationVitaform) REFERENCES OrientationVitaformValues(idvalue),
+FOREIGN KEY (OrientationSimpss) REFERENCES OrientationSimpssValues(idvalue),
+FOREIGN KEY (OrientationExterne) REFERENCES OrientationExterneValues(idvalue)
 );
 
 DROP TABLE CompteRendu;
