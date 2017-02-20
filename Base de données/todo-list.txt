@@ -8,3 +8,5 @@ A voir avec client :
 	- Patient psychologique : Test de Scoff ?
 	- Indice FINDRISK ?
 	- PatientObectif : Orientation Vitaform, liste déroulante ? choix mutliple ? (Orientation SIMMPS, Orientation externe)
+	- Origine familiale : ville/pays en TL ?
+	- Patient, Correspondants : Orientation interne(simpss), externe ?
