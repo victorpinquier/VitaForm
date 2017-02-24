@@ -9,7 +9,7 @@
 	
   <servlet-mapping>
 	<servlet-name>Accueil</servlet-name>
-	<url-pattern>/</url-pattern>
+	<url-pattern></url-pattern>
   </servlet-mapping>
   
   <servlet>
