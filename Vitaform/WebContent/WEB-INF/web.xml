@@ -21,4 +21,14 @@
 	<servlet-name>Connexion</servlet-name>
 	<url-pattern>/connexion</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AjouterPatient</servlet-name>
+    <servlet-class>servlets.AjouterPatient</servlet-class>
+  </servlet>
+	
+  <servlet-mapping>
+	<servlet-name>AjouterPatient</servlet-name>
+	<url-pattern>/ajouterPatient</url-pattern>
+  </servlet-mapping>
 </web-app>

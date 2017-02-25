@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class Accueil extends HttpServlet {
-    public static final String VUE = "/WEB-INF/index.jsp";
+public class AjouterPatient extends HttpServlet {
+	public static final String VUE = "/WEB-INF/ajouterPatient.jsp";
     public static final String ACCES_PUBLIC     = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 

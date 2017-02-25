@@ -21,7 +21,7 @@ public final class ConnexionForm {
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
     
-    // On définit la configuration d'acces au serveur SQL
+    // On dÃ©finit la configuration d'acces au serveur SQL
     private static final String URL = "jdbc:mysql://localhost:3306/vitaform";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "";
@@ -38,7 +38,7 @@ public final class ConnexionForm {
     }
 
     public Utilisateur connecterUtilisateur( HttpServletRequest request ) {
-    	 /* Récupération des champs du formulaire */
+    	 /* Rï¿½cupï¿½ration des champs du formulaire */
         String mail = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
 
@@ -70,7 +70,7 @@ public final class ConnexionForm {
 	            try {
 	                connexion = DriverManager.getConnection( URL, USERNAME, PASSWORD );
 	
-	                /* Création de l'objet gérant les requêtes */
+	                /* Crï¿½ation de l'objet gï¿½rant les requï¿½tes */
 	                statement = connexion.createStatement();
 	
 	                ResultSet resultatSet = statement.executeQuery("Select * from Utilisateur Where mdp = MD5('"+motDePasse+"') And mail = '"+mail+"';");
@@ -80,7 +80,7 @@ public final class ConnexionForm {
 	                }
 	            } catch (SQLException ex) {
 	                Logger.getLogger(ConnexionForm.class.getName()).log(Level.SEVERE, null, ex);
-	                throw new Exception("Erreur lors de la connexion avec la base de données.");
+	                throw new Exception("Erreur lors de la connexion avec la base de donnï¿½es.");
 	            }
 			}else{
 			    throw new Exception("Merci de saisir votre mot de passe.");
@@ -92,14 +92,14 @@ public final class ConnexionForm {
     }
     
     /*
-     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
+     * Ajoute un message correspondant au champ spï¿½cifiï¿½ ï¿½ la map des erreurs.
      */
     private void setErreur(String champ, String message) {
         erreurs.put(champ, message);
     }
 
     /*
-     * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
+     * Mï¿½thode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
     private static String getValeurChamp(HttpServletRequest request, String nomChamp) {
