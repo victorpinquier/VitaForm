@@ -48,14 +48,13 @@
 						<!-- /input-group -->
 					</li>
 					<li>
-						<a href="/Vitaform"><i class="fa fa-dashboard fa-fw"></i> Accueil</a>
-					</li>
-					
-					<li>
-						<a href="/"><i class="fa fa-table fa-fw"></i> Liste des patients</a>
+						<a href="/Vitaform/"><i class="fa fa-dashboard fa-fw"></i> Accueil</a>
 					</li>
 					<li>
-						<a href="ajouterPatient"><i class="fa fa-edit fa-fw"></i> Formulaire</a>
+						<a href="liste-patients"><i class="fa fa-table fa-fw"></i> Liste des patients</a>
+					</li>
+					<li>
+						<a href="ajouter-patient"><i class="fa fa-edit fa-fw"></i> Formulaire</a>
 					</li>
 					
 				</ul>

@@ -35,7 +35,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                   	<form role="form">
+                   	<form role="form" method="post" action="ajouter-patient">
                    		<div class="col-lg-12">
                    			<div class="panel panel-default">
 		                        <div class="panel-heading">
@@ -44,11 +44,11 @@
 	                       		<div class="panel-body">
                            			<div class="form-group">
                                     	<label>Nom</label>
-                                    	<input class="form-control">
+                                    	<input class="form-control" id="nom" name="nom" value="" maxlength="60">
                                     </div>
                                    	<div class="form-group">
                                        <label>Prénom</label>
-                                       <input class="form-control">
+                                       <input class="form-control" id="prenom" name="prenom" value="" maxlength="60">
                                    	</div>
                                    	<div class="form-group">
                                        <label>Sexe</label>
@@ -61,15 +61,15 @@
                                    	</div>
                                    	<div class="form-group">
                                        <label>Date de naissance</label>
-                                       <input class="form-control">
+                                       <input class="form-control" id="datenaissance" name="datenaissance" value="" maxlength="60">
                                    	</div>
                                    	<div class="form-group">
                                        <label>Numéro de téléphone</label>
-                                       <input class="form-control">
+                                       <input class="form-control" id="tel" name="tel" value="" maxlength="60">
                                    	</div>
                                    	<div class="form-group">
                                    		<label>Adresse mail</label>
-                                       <input type="text" class="form-control">
+                                       <input type="text" class="form-control" id="mail" name="mail" value="" maxlength="60">
                                    	</div>
 	                           	</div>
                            </div>
@@ -96,13 +96,13 @@
 	                        <div class="form-group">
 	                            <div class="form-group">
 	                           		<label>Orientation</label>
-	                            	<input type="text" class="form-control">
+	                            	<input type="text" class="form-control" id="orientation" name="orientation" value="" maxlength="60">
                                 </div>
 	                        </div>
 	                        <div class="form-group">
 	                            <div class="form-group">
 	                           		<label>Nombre d'années à Toulouse</label>
-	                            	<input type="text" class="form-control">
+	                            	<input type="text" class="form-control" id="nbantlse" name="nbantlse" value="" maxlength="60">
                                 </div>
 	                        </div>
 	                        <div class="form-group">
@@ -216,7 +216,7 @@
 	               </div>
 	                <!-- /.col-lg-12 (nested) -->
 	                
-	               	<button id="envoyerForm" type="submit" class="btn btn-default">Enregistrer le dossier</button>
+	               	<input id="envoyerForm" type="submit" class="btn btn-default" value="Enregistrer le dossier">
    				</form>
          </div>
          <!-- /.row -->

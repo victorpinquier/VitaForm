@@ -6,7 +6,6 @@
     <servlet-name>Accueil</servlet-name>
     <servlet-class>servlets.Accueil</servlet-class>
   </servlet>
-	
   <servlet-mapping>
 	<servlet-name>Accueil</servlet-name>
 	<url-pattern></url-pattern>
@@ -16,7 +15,6 @@
     <servlet-name>Connexion</servlet-name>
     <servlet-class>servlets.Connexion</servlet-class>
   </servlet>
-	
   <servlet-mapping>
 	<servlet-name>Connexion</servlet-name>
 	<url-pattern>/connexion</url-pattern>
@@ -26,9 +24,17 @@
     <servlet-name>AjouterPatient</servlet-name>
     <servlet-class>servlets.AjouterPatient</servlet-class>
   </servlet>
-	
   <servlet-mapping>
 	<servlet-name>AjouterPatient</servlet-name>
-	<url-pattern>/ajouterPatient</url-pattern>
+	<url-pattern>/ajouter-patient</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListePatients</servlet-name>
+    <servlet-class>servlets.ListePatients</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	<servlet-name>ListePatients</servlet-name>
+	<url-pattern>/liste-patients</url-pattern>
   </servlet-mapping>
 </web-app>

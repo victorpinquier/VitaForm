@@ -38,7 +38,7 @@ public final class ConnexionForm {
     }
 
     public Utilisateur connecterUtilisateur( HttpServletRequest request ) {
-    	 /* R�cup�ration des champs du formulaire */
+    	 /* Récupèration des champs du formulaire */
         String mail = getValeurChamp(request, CHAMP_EMAIL);
         String motDePasse = getValeurChamp(request, CHAMP_PASS);
 
@@ -70,7 +70,7 @@ public final class ConnexionForm {
 	            try {
 	                connexion = DriverManager.getConnection( URL, USERNAME, PASSWORD );
 	
-	                /* Cr�ation de l'objet g�rant les requ�tes */
+	                /* Création de l'objet gérant les requêtes */
 	                statement = connexion.createStatement();
 	
 	                ResultSet resultatSet = statement.executeQuery("Select * from Utilisateur Where mdp = MD5('"+motDePasse+"') And mail = '"+mail+"';");
@@ -80,7 +80,7 @@ public final class ConnexionForm {
 	                }
 	            } catch (SQLException ex) {
 	                Logger.getLogger(ConnexionForm.class.getName()).log(Level.SEVERE, null, ex);
-	                throw new Exception("Erreur lors de la connexion avec la base de donn�es.");
+	                throw new Exception("Erreur lors de la connexion avec la base de données.");
 	            }
 			}else{
 			    throw new Exception("Merci de saisir votre mot de passe.");
@@ -92,14 +92,14 @@ public final class ConnexionForm {
     }
     
     /*
-     * Ajoute un message correspondant au champ sp�cifi� � la map des erreurs.
+     * Ajoute un message correspondant au champ spécifié à la map des erreurs.
      */
     private void setErreur(String champ, String message) {
         erreurs.put(champ, message);
     }
 
     /*
-     * M�thode utilitaire qui retourne null si un champ est vide, et son contenu
+     * Méthode utilitaire qui retourne null si un champ est vide, et son contenu
      * sinon.
      */
     private static String getValeurChamp(HttpServletRequest request, String nomChamp) {

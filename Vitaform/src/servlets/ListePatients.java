@@ -8,11 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import beans.Patient;
-import forms.PatientForm;
-
-public class AjouterPatient extends HttpServlet {
-	public static final String VUE = "/WEB-INF/ajouterPatient.jsp";
+public class ListePatients extends HttpServlet {
+    public static final String VUE = "/WEB-INF/listePatients.jsp";
     public static final String ACCES_PUBLIC     = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
 
@@ -35,17 +32,5 @@ public class AjouterPatient extends HttpServlet {
 	
     public void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
         /* Traitement des données du formulaire */
-        /* Objet du formulaire */
-        PatientForm form = new PatientForm();
-        
-        /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
-        Patient patient = form.ajouterPatient(request);
-
-        /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( "form", form );
-        request.setAttribute( "patient", patient );
-
-        /* Transmission de la paire d'objets request/response à notre JSP */
-        this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
     }
 }
