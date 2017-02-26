@@ -7,109 +7,110 @@
 */
 
 DROP TABLE FaculteValues;
+DROP TABLE CursusValues;
+DROP TABLE OrigineFamilialeValues;
+DROP TABLE SituationFamilialeValues;
+DROP TABLE LieuDeVieValues;
+DROP TABLE BoursesValues;
+DROP TABLE OrientationValues;
+DROP TABLE PrisePetitDejeunerValues;
+DROP TABLE ResultatsValues;
+DROP TABLE OrientationVitaformValues;
+DROP TABLE OrientationSimpssValues;
+DROP TABLE OrientationExterneValues;
+
 CREATE TABLE FaculteValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE CursusValues;
 CREATE TABLE CursusValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE OrigineFamilialeValues;
 CREATE TABLE OrigineFamilialeValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE SituationFamilialeValues;
 CREATE TABLE SituationFamilialeValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE LieuDeVieValues;
 CREATE TABLE LieuDeVieValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE BoursesValues;
 CREATE TABLE BoursesValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE OrientationValues;
 CREATE TABLE OrientationValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*
 	PatientNutrition
 */
 
-DROP TABLE PrisePetitDejeunerValues;
 CREATE TABLE PrisePetitDejeunerValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*
 	PatientPhysique
 */
 
-DROP TABLE ResultatsValues;
 CREATE TABLE ResultatsValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*
 	PatientObjectifs
 */
 
-DROP TABLE OrientationVitaformValues;
 CREATE TABLE OrientationVitaformValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE OrientationSimpssValues;
 CREATE TABLE OrientationSimpssValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE OrientationExterneValues;
 CREATE TABLE OrientationExterneValues
 (
 idvalue MEDIUMINT NOT NULL,
-value nvarchar(255),
+value varchar(255),
 PRIMARY KEY (idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;

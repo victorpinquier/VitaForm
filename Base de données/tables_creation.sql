@@ -12,45 +12,54 @@
 
 */
 
+
+DROP TABLE DossierMedical;
+DROP TABLE EntretienInitial;
+DROP TABLE PatientMesures;
+DROP TABLE PatientNutrition;
+DROP TABLE PatientPhysique;
+DROP TABLE PatientPsychologique;
+DROP TABLE PatientObjectifs;
+DROP TABLE CompteRendu;
 DROP TABLE Patient;
+
 CREATE TABLE Patient
 (
 IdPatient MEDIUMINT NOT NULL AUTO_INCREMENT,
-Nom nvarchar(255),
-Prenom nvarchar(255),
-Sexe nvarchar(255),
+Nom varchar(255),
+Prenom varchar(255),
+Sexe varchar(255),
 DateNaissance date,
-Telephone nvarchar(255),
-AdresseMail nvarchar(255),
-Faculte nvarchar(255),
-Cursus nvarchar(255),
-OrientationScolaire nvarchar(255),
-AnneesToulouse nvarchar(255),
-OrigineFamiliale nvarchar(255),
-OrigineFamilialeAutre nvarchar(255),
-SituationFamiliale nvarchar(255),
-LieuDeVie nvarchar(255),
+Telephone varchar(255),
+AdresseMail varchar(255),
+Faculte MEDIUMINT,
+Cursus MEDIUMINT,
+OrientationScolaire varchar(255),
+AnneesToulouse varchar(255),
+OrigineFamiliale MEDIUMINT,
+OrigineFamilialeAutre varchar(255),
+SituationFamiliale MEDIUMINT,
+LieuDeVie MEDIUMINT,
 DifficultesFinancieres boolean,
-Bourse nvarchar(255),
+Bourse MEDIUMINT,
 ServiceSocial boolean,
 ServiceSocialDetails text,
 PanierCampus boolean,
-Orientation nvarchar(255),
+Orientation MEDIUMINT,
 Preciser text,
 MedecinTraitant boolean,
 MedecinTraitantDetails text,
 AutresSuivis text,
 PRIMARY KEY (IdPatient),
-FOREIGN KEY (Faculte) REFERENCES PatientFaculteValues(idvalues),
-FOREIGN KEY (Cursus) REFERENCES CursusValues(idvalues),
-FOREIGN KEY (OrigineFamiliale) REFERENCES OrigineFamilialeValues(idvalues),
-FOREIGN KEY (SituationFamiliale) REFERENCES SituationFamilialeValues(idvalues),
-FOREIGN KEY (LieuDeVie) REFERENCES LieuDeVieValues(idvalues),
-FOREIGN KEY (Bourse) REFERENCES BoursesValues(idvalues),
-FOREIGN KEY (Orientation) REFERENCES OrientationValues(idvalues)
-);
+FOREIGN KEY (Faculte) REFERENCES FaculteValues(idvalue),
+FOREIGN KEY (Cursus) REFERENCES CursusValues(idvalue),
+FOREIGN KEY (OrigineFamiliale) REFERENCES OrigineFamilialeValues(idvalue),
+FOREIGN KEY (SituationFamiliale) REFERENCES SituationFamilialeValues(idvalue),
+FOREIGN KEY (LieuDeVie) REFERENCES LieuDeVieValues(idvalue),
+FOREIGN KEY (Bourse) REFERENCES BoursesValues(idvalue),
+FOREIGN KEY (Orientation) REFERENCES OrientationValues(idvalue)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE DossierMedical;
 CREATE TABLE DossierMedical
 (
 IdDossier MEDIUMINT,
@@ -88,20 +97,19 @@ AccidentVasculairePrecoce boolean,
 AccidentVasculairePrecoceDetails text,
 PRIMARY KEY (IdDossier),
 FOREIGN KEY (IdDossier) REFERENCES Patient(IdPatient)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE EntretienInitial;
 CREATE TABLE EntretienInitial
 (
 IdEntretientInit MEDIUMINT,
-PoidsNaissance nvarchar(255),
+PoidsNaissance varchar(255),
 SurchagePonderaleEnfance boolean,
 surchagePonderaleAdolescence boolean,
 ObesiteEnfance boolean,
 ObeisteAdolescence boolean,
-KilosTroisAnnees nvarchar(255),
-PoidsMaximum nvarchar(255),
-AgePoidsMaximum nvarchar(255),
+KilosTroisAnnees varchar(255),
+PoidsMaximum varchar(255),
+AgePoidsMaximum varchar(255),
 PriseEnChargeAnterieure boolean,
 PriseEnChargeAnterieureDetails text,
 Commentaires text,
@@ -113,9 +121,8 @@ Dysthyroidie boolean,
 DysthyroidieDetails text,
 PRIMARY KEY (IdEntretientInit),
 FOREIGN KEY (IdEntretientInit) REFERENCES Patient(IdPatient)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE PatientMesures;
 CREATE TABLE PatientMesures
 (
 IdMesures MEDIUMINT,
@@ -123,37 +130,34 @@ Taille float(3,2),
 Poids float(3,2),
 IMC float(3,2),
 TourDeTaille float(3,2),
-TA nvarchar(255),
+TA varchar(255),
 PRIMARY KEY (IdMesures),
 FOREIGN KEY (IdMesures) REFERENCES Patient(IdPatient)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE PatientNutrition;
 CREATE TABLE PatientNutrition
 (
 IdNutrition MEDIUMINT,
-PrisePetitDejeuner nvarchar(255),
-NombreFruitsEtLegumes nvarchar(255),
+PrisePetitDejeuner MEDIUMINT,
+NombreFruitsEtLegumes varchar(255),
 Autre text,
 ComportementAlimentaire text,
 PRIMARY KEY (IdNutrition),
 FOREIGN KEY (IdNutrition) REFERENCES Patient(IdPatient),
 FOREIGN KEY (PrisePetitDejeuner) REFERENCES PrisePetitDejeunerValues(idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE PatientPhysique;
 CREATE TABLE PatientPhysique
 (
 IdPhysique MEDIUMINT,
 Marche boolean,
-QAP nvarchar(255),
-Resultats nvarchar(255),
+QAP varchar(255),
+Resultats MEDIUMINT,
 PRIMARY KEY (IdPhysique),
 FOREIGN KEY (IdPhysique) REFERENCES Patient(IdPatient),
 FOREIGN KEY (Resultats) REFERENCES ResultatsValues(idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE PatientPsychologique;
 CREATE TABLE PatientPsychologique
 (
 IdPsychologique MEDIUMINT,
@@ -161,39 +165,37 @@ SigneDepressif boolean,
 SigneDepressifDetails text,
 SuiviExistant boolean,
 SuiviExistantDetails text,
-EVASommeil nvarchar(255),
-EVAStress nvarchar(255),
+EVASommeil varchar(255),
+EVAStress varchar(255),
 SensationIsolement boolean,
 SensationIsolementDetails text,
-TestScoff nvarchar(255),
-ResultatsScoff nvarchar(255),
+TestScoff varchar(255),
+ResultatsScoff varchar(255),
 PRIMARY KEY (IdPsychologique),
 FOREIGN KEY (IdPsychologique) REFERENCES Patient(IdPatient)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE PatientObjectifs;
 CREATE TABLE PatientObjectifs
 (
 IdObjectif MEDIUMINT,
-FINRISK nvarchar(255),
+FINRISK varchar(255),
 SyndromeMetabolique boolean,
 Motivation text,
 Objectif text,
-OrientationVitaform nvarchar(255),
-OrientationSimpss nvarchar(255),
-OrientationExterne nvarchar(255),
+OrientationVitaform MEDIUMINT,
+OrientationSimpss MEDIUMINT,
+OrientationExterne MEDIUMINT,
 PRIMARY KEY (IdObjectif),
 FOREIGN KEY (IdObjectif) REFERENCES Patient(IdPatient),
 FOREIGN KEY (OrientationVitaform) REFERENCES OrientationVitaformValues(idvalue),
 FOREIGN KEY (OrientationSimpss) REFERENCES OrientationSimpssValues(idvalue),
 FOREIGN KEY (OrientationExterne) REFERENCES OrientationExterneValues(idvalue)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-DROP TABLE CompteRendu;
 CREATE TABLE CompteRendu
 (
 IdCompteRendu MEDIUMINT NOT NULL AUTO_INCREMENT,
-TypeRdv nvarchar(255),
+TypeRdv varchar(255),
 ResumeRDV text,
 PRIMARY KEY (IdCompteRendu)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
