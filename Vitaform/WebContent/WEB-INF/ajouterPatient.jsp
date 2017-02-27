@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -30,6 +31,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Ajouter un patient</h1>
+                    <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -53,10 +55,10 @@
                                    	<div class="form-group">
                                        <label>Sexe</label>
                                        <label class="radio-inline">
-                                           <input type="radio" name="optionsSexe" id="optionsSexe1" value="optionSexe1" checked>M
+                                           <input type="radio" name="optionsSexe" id="optionsSexe1" value="M" checked>M
                                        </label>
                                        <label class="radio-inline">
-                                           <input type="radio" name="optionsSexe" id="optionsSexe2" value="optionSexe2">F
+                                           <input type="radio" name="optionsSexe" id="optionsSexe2" value="F">F
                                        </label>
                                    	</div>
                                    	<div class="form-group">
@@ -83,14 +85,17 @@
           				  <div class="panel-body">
                        		<div class="form-group">
 	                            <label>Faculté</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixFaculte">
+	                                <option id="choixFaculte1" value="1" >Test à enlever</option>
+		                            <c:forEach items="${resultatSet}" var="option">
+								        <option value="${resultatSet.key}" >${resultatSet.value}</option>
+								    </c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Niveau/Cursus</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixCursus">
+	                                <option id="choixCursus1" value="1">Test à enlever</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
@@ -107,46 +112,46 @@
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Origine familiale</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixOrigineFam">
+	                                <option id="choixOrigineFam1" value="1">Test à enlever</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Situation familiale</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixSituationFam">
+	                                <option id="choixSituationFam1" value="1">Test à enlever</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Lieu de vie</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixLieuVie">
+	                                <option id="choixLieuVie1" value="1">Test à enlever</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Difficultés financières</label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsDF" id="optionsDF1" value="optionDF1" checked>Non
+	                                <input type="radio" name="optionsDF" id="optionsDF1" value="0" checked>Non
 	                            </label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsDF" id="optionsDF2" value="optionDF2">Oui
+	                                <input type="radio" name="optionsDF" id="optionsDF2" value="1">Oui
 	                            </label>
                            </div>
                            <div class="form-group">
 	                            <label>Bourse</label>
-	                            <select class="form-control">
-	                                <option>Oui</option>
-	                                <option>Non</option>
-	                                <option>En cours</option>
+	                            <select class="form-control" name="choixBourse">
+	                                <option id="choixBourse1" value="1">Oui</option>
+	                                <option id="choixBourse2" value="2">Non</option>
+	                                <option id="choixBourse3" value="3">En cours</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Suivi par service social</label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsSS" id="optionsSS1" value="optionSS1" checked>Non
+	                                <input type="radio" name="optionsSS" id="optionsSS1" value="0" checked>Non
 	                            </label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsSS" id="optionsSS2" value="optionSS2">Oui
+	                                <input type="radio" name="optionsSS" id="optionsSS2" value="1">Oui
 	                            </label>
                            </div>
                            <div class="form-group">
@@ -158,10 +163,10 @@
 	                        <div class="form-group">
 	                            <label>Inscrit à panier campus</label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsPC" id="optionsPC1" value="optionPC1" checked>Non
+	                                <input type="radio" name="optionsPC" id="optionsPC1" value="0" checked>Non
 	                            </label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsPC" id="optionsPC2" value="optionPC2">Oui
+	                                <input type="radio" name="optionsPC" id="optionsPC2" value="1">Oui
 	                            </label>
                             </div>
                            
@@ -177,8 +182,8 @@
           				  <div class="panel-body">
                        		<div class="form-group">
 	                            <label>Orientation</label>
-	                            <select class="form-control">
-	                                <option>Test à enlever</option>
+	                            <select class="form-control" name="choixOrientation">
+	                                <option id="choixOrientation1" value="1">Test à enlever</option>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
@@ -190,10 +195,10 @@
 	                        <div class="form-group">
 	                            <label>Médecin traitant</label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsMT" id="optionsMT1" value="optionMT1" checked>Non
+	                                <input type="radio" name="optionsMT" id="optionsMT1" value="0" checked>Non
 	                            </label>
 	                            <label class="radio-inline">
-	                                <input type="radio" name="optionsMT" id="optionsMT2" value="optionMT2">Oui
+	                                <input type="radio" name="optionsMT" id="optionsMT2" value="1">Oui
 	                            </label>
                             </div>
                             <div class="form-group">

@@ -1,6 +1,11 @@
 package servlets;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,11 +15,31 @@ import javax.servlet.http.HttpSession;
 
 import beans.Patient;
 import forms.PatientForm;
+import others.ConnexionBD;
 
 public class AjouterPatient extends HttpServlet {
 	public static final String VUE = "/WEB-INF/ajouterPatient.jsp";
     public static final String ACCES_PUBLIC     = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
+    
+    public void init() throws ServletException {
+        Connection connexion = null;
+        Statement statement = null;
+        ResultSet resultatSet = null;
+    	try {
+			connexion = DriverManager.getConnection( ConnexionBD.URL, ConnexionBD.USERNAME, ConnexionBD.PASSWORD );
+
+	        /* Création de l'objet gérant les requêtes */
+	        statement = connexion.createStatement();
+
+	        resultatSet = statement.executeQuery("Select * from FaculteValues;");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+
+    }
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException{
         /* Récupèration de la session depuis la requête */

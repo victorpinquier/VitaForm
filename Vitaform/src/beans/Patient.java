@@ -7,7 +7,7 @@ public class Patient {
 	private String nom;
 	private String prenom;
 	private String sexe;
-	private Date dateNaissance;
+	private String dateNaissance;
 	private String telephone;
 	private String adresseMail;
 	private String faculte;
@@ -53,10 +53,10 @@ public class Patient {
 	public void setSexe(String sexe) {
 		this.sexe = sexe;
 	}
-	public Date getDateNaissance() {
+	public String getDateNaissance() {
 		return dateNaissance;
 	}
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(String dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 	public String getTelephone() {

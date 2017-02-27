@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 
 import beans.Utilisateur;
+import others.ConnexionBD;
 
 public final class ConnexionForm {
     private static final String CHAMP_EMAIL  = "mail";
@@ -21,10 +22,6 @@ public final class ConnexionForm {
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
     
-    // On définit la configuration d'acces au serveur SQL
-    private static final String URL = "jdbc:mysql://localhost:3306/vitaform";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "";
     Connection connexion = null;
     Statement statement = null;
     ResultSet resultatSet = null;
@@ -68,7 +65,7 @@ public final class ConnexionForm {
 	            } catch ( ClassNotFoundException e ) {}
 	
 	            try {
-	                connexion = DriverManager.getConnection( URL, USERNAME, PASSWORD );
+	                connexion = DriverManager.getConnection( ConnexionBD.URL, ConnexionBD.USERNAME, ConnexionBD.PASSWORD );
 	
 	                /* Création de l'objet gérant les requêtes */
 	                statement = connexion.createStatement();
