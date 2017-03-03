@@ -54,7 +54,18 @@
 						<a href="liste-patients"><i class="fa fa-table fa-fw"></i> Liste des patients</a>
 					</li>
 					<li>
-						<a href="ajouter-patient"><i class="fa fa-edit fa-fw"></i> Formulaire</a>
+						<a href="#"><i class="fa fa-edit fa-fw"></i> Formulaires <span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+	                        <li>
+	                            <a href="ajouter-patient">Ajout de patient</a>
+	                        </li>
+	                        <li>
+	                            <a href="#">Premier entretien</a>
+	                        </li>
+	                        <li>
+	                            <a href="#">Dossier spécifique</a>
+	                        </li>
+                        </ul>
 					</li>
 					
 					<li>
