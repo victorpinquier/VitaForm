@@ -58,7 +58,7 @@
 					</li>
 					
 					<li>
-						<a href="agenda"><i class="fa fa-edit fa-fw"></i> Agenda</a>
+						<a href="agenda"><i class="fa fa-calendar fa-fw"></i> Agenda</a>
 					</li>
 					
 				</ul>
