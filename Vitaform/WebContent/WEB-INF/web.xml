@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Vitaform</display-name>
-  
   <servlet>
     <servlet-name>Accueil</servlet-name>
     <servlet-class>servlets.Accueil</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>Accueil</servlet-name>
-	<url-pattern></url-pattern>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern></url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Connexion</servlet-name>
     <servlet-class>servlets.Connexion</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>Connexion</servlet-name>
-	<url-pattern>/connexion</url-pattern>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/connexion</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>AjouterPatient</servlet-name>
     <servlet-class>servlets.AjouterPatient</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>AjouterPatient</servlet-name>
-	<url-pattern>/ajouter-patient</url-pattern>
+    <servlet-name>AjouterPatient</servlet-name>
+    <url-pattern>/ajouter-patient</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ListePatients</servlet-name>
     <servlet-class>servlets.ListePatients</servlet-class>
   </servlet>
   <servlet-mapping>
-	<servlet-name>ListePatients</servlet-name>
-	<url-pattern>/liste-patients</url-pattern>
+    <servlet-name>ListePatients</servlet-name>
+    <url-pattern>/liste-patients</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Agenda</servlet-name>
+    <servlet-class>servlets.Agenda</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Agenda</servlet-name>
+    <url-pattern>/agenda</url-pattern>
   </servlet-mapping>
 </web-app>

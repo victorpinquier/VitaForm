@@ -57,6 +57,10 @@
 						<a href="ajouter-patient"><i class="fa fa-edit fa-fw"></i> Formulaire</a>
 					</li>
 					
+					<li>
+						<a href="agenda"><i class="fa fa-edit fa-fw"></i> Agenda</a>
+					</li>
+					
 				</ul>
 			</div>
 			<!-- /.sidebar-collapse -->
