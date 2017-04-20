@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -50,47 +51,22 @@
                                     <tr>
                                         <th>Nom</th>
                                         <th>Prénom</th>
-                                        <th>Age</th>
+                                        <th>Date de naissance</th>
                                         <th>Adresse mail</th>
+                                        <th>Numéro de téléphone</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                	<c:forEach items="${patients}" var="patients">
                                 	<tr >
-                                        <td>TESTE</td>
-                                        <td>Test1</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
-                                    <tr >
-                                        <td>TESTE</td>
-                                        <td>Test2</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
-                                    <tr >
-                                        <td>TESTE</td>
-                                        <td>Test3</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
-                                    <tr >
-                                        <td>TESTE</td>
-                                        <td>Test4</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
-                                    <tr >
-                                        <td>TESTE</td>
-                                        <td>Test5</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
-                                    <tr >
-                                        <td>TESTE</td>
-                                        <td>Test6</td>
-                                        <td>20</td>
-                                        <td>test@test.com</td>
-                                    </tr>
+									    <td><c:out value="${patients.nom}" /></td>
+										<td><c:out value="${patients.prenom}" /></td>
+										<td><c:out value="${patients.dateNaissance}" /></td>
+										<td><c:out value="${patients.adresseMail}" /></td>
+										<td><c:out value="${patients.telephone}" /></td>
+									</tr >
+									</c:forEach>
+                                	
                                 </tbody>
                     		</table>
                     	</div>

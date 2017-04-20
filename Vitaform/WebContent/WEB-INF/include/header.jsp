@@ -60,7 +60,7 @@
 	                            <a href="ajouter-patient">Ajout de patient</a>
 	                        </li>
 	                        <li>
-	                            <a href="#">Premier entretien</a>
+	                            <a href="premier-entretien">Premier entretien</a>
 	                        </li>
 	                        <li>
 	                            <a href="#">Dossier spécifique</a>

@@ -26,6 +26,15 @@
     <url-pattern>/ajouter-patient</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>AjouterPremierEntretien</servlet-name>
+    <servlet-class>servlets.AjouterPremierEntretien</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterPremierEntretien</servlet-name>
+    <url-pattern>/premier-entretien</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>ListePatients</servlet-name>
     <servlet-class>servlets.ListePatients</servlet-class>
   </servlet>
