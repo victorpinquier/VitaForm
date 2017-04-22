@@ -42,6 +42,14 @@
     <servlet-name>ListePatients</servlet-name>
     <url-pattern>/liste-patients</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>DossierPatient</servlet-name>
+    <servlet-class>servlets.DossierPatient</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DossierPatient</servlet-name>
+    <url-pattern>/dossier-patient/*</url-pattern>
+  </servlet-mapping>
   
   <servlet>
     <servlet-name>Agenda</servlet-name>

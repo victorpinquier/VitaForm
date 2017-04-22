@@ -57,13 +57,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                	<c:forEach items="${patients}" var="patients">
+                                	<c:forEach items="${patients}" var="patient">
                                 	<tr >
-									    <td><c:out value="${patients.nom}" /></td>
-										<td><c:out value="${patients.prenom}" /></td>
-										<td><c:out value="${patients.dateNaissance}" /></td>
-										<td><c:out value="${patients.adresseMail}" /></td>
-										<td><c:out value="${patients.telephone}" /></td>
+									    <td> <a href="dossier-patient/<c:out value="${patient.idPatient}" />" > <c:out value="${patient.nom}" /> </a> </td>
+										<td><c:out value="${patient.prenom}" /></td>
+										<td><c:out value="${patient.dateNaissance}" /></td>
+										<td><c:out value="${patient.adresseMail}" /></td>
+										<td><c:out value="${patient.telephone}" /></td>
 									</tr >
 									</c:forEach>
                                 	

@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -28,6 +29,8 @@ public class PatientDAO {
 	        resultatSet = statement.executeQuery("Select * from Patient;");
 	        while (resultatSet.next()) {
 	        	Patient row = new Patient();
+	        	
+	        	row.setIdPatient(resultatSet.getInt("idPatient"));
 	            row.setNom(resultatSet.getString("Nom"));
 	            row.setPrenom(resultatSet.getString("Prenom"));
 	            row.setSexe(resultatSet.getString("Sexe"));
@@ -42,5 +45,39 @@ public class PatientDAO {
 			e.printStackTrace();
 		}
 		return patients;
+	}
+	
+	public static Patient getPatient(int idPatient) throws SQLException {
+		Connection connexion = null;
+	    Statement statement = null;
+	    ResultSet resultatSet = null;
+	    Patient patient = new Patient();
+	    
+		try {
+			connexion = DriverManager.getConnection( ConnexionBD.URL, ConnexionBD.USERNAME, ConnexionBD.PASSWORD );
+	
+	        /* Création de l'objet gérant les requêtes */
+	        statement = connexion.createStatement();
+	        
+	        String selectSQL = "Select * from Patient Where idPatient = ?;";
+	        
+	        PreparedStatement preparedStatement = connexion.prepareStatement(selectSQL);
+	        preparedStatement.setInt(1, idPatient);
+	        resultatSet = preparedStatement.executeQuery();
+	        resultatSet.next();
+	        
+	        patient.setNom(resultatSet.getString("Nom"));
+	        patient.setPrenom(resultatSet.getString("Prenom"));
+	        patient.setSexe(resultatSet.getString("Sexe"));
+	        patient.setDateNaissance(resultatSet.getString("DateNaissance"));
+	        patient.setTelephone(resultatSet.getString("Telephone"));
+	        patient.setAdresseMail(resultatSet.getString("AdresseMail"));
+	        
+	        System.out.println(patient);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return patient;
 	}
 }
