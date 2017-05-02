@@ -9,16 +9,17 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import beans.EntretienInitial;
 import beans.Patient;
 import others.ConnexionBD;
 
 public class EntretienInitialDAO {
 	
-	public static Patient getEntretienInitial(int idEntretienInitial) throws SQLException {
+	public static EntretienInitial getEntretienInitial(int idEntretienInitial) throws SQLException {
 		Connection connexion = null;
 	    Statement statement = null;
 	    ResultSet resultatSet = null;
-	    Patient patient = null;
+	    EntretienInitial entretien = null;
 	    
 		try {
 			connexion = DriverManager.getConnection( ConnexionBD.URL, ConnexionBD.USERNAME, ConnexionBD.PASSWORD );
@@ -26,27 +27,32 @@ public class EntretienInitialDAO {
 	        /* Création de l'objet gérant les requêtes */
 	        statement = connexion.createStatement();
 	        
-	        String selectSQL = "Select nom, prenom, sexe, DATE_FORMAT(dateNaissance,'%d/%m/%Y') AS dateNaissance,"
-	        		+ " telephone, adresseMail from Patient Where idPatient = ?;";
+	        String selectSQL = "Select f.value AS faculte, c.value AS cursus, orientationScolaire, anneesToulouse,"
+	        		+ " o.value AS origineFamiliale, origineFamilialeAutre"
+	        		+ " from EntretienInitial e, CursusValues c, FaculteValues f, OrigineFamilialeValues o"
+	        		+ " Where e.IdEntretientInit = c.idvalue"
+	        		+ " And e.IdEntretientInit = f.idvalue"
+	        		+ " And e.IdEntretientInit = o.idvalue"
+	        		+ " And e.IdEntretientInit = ?;";
 	        
 	        PreparedStatement preparedStatement = connexion.prepareStatement(selectSQL);
 	        preparedStatement.setInt(1, idEntretienInitial);
 	        resultatSet = preparedStatement.executeQuery();
 	        
 	        if(resultatSet.next()){
-	        	patient = new Patient();
-		        patient.setNom(resultatSet.getString("Nom"));
-		        patient.setPrenom(resultatSet.getString("Prenom"));
-		        patient.setSexe(resultatSet.getString("Sexe"));
-		        patient.setDateNaissance(resultatSet.getString("DateNaissance"));
-		        patient.setTelephone(resultatSet.getString("Telephone"));
-		        patient.setAdresseMail(resultatSet.getString("AdresseMail"));
+	        	entretien = new EntretienInitial();
+	        	entretien.setFaculte(resultatSet.getString("faculte"));
+	        	entretien.setCursus(resultatSet.getString("cursus"));
+	        	entretien.setOrientationScolaire(resultatSet.getString("orientationScolaire"));
+	        	entretien.setAnneesToulouse(resultatSet.getString("anneesToulouse"));
+	        	entretien.setOrigineFamiliale(resultatSet.getString("origineFamiliale"));
+	        	entretien.setOrigineFamilialeAutre(resultatSet.getString("origineFamilialeAutre"));
 	        }
 	        
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return patient;
+		return entretien;
 	}
 }

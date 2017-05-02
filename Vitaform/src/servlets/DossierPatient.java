@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.EntretienInitial;
 import beans.Patient;
+import dao.EntretienInitialDAO;
 import dao.PatientDAO;
 
 public class DossierPatient extends HttpServlet {
@@ -34,9 +36,11 @@ public class DossierPatient extends HttpServlet {
         	try {
         		int idPatient = Integer.parseInt(request.getPathInfo().split("/")[1]);
                 Patient patient = PatientDAO.getPatient(idPatient);
+                EntretienInitial entretien = EntretienInitialDAO.getEntretienInitial(idPatient);
                 
                 if(patient != null){
                 	request.setAttribute("patient", patient);
+                	request.setAttribute("entretien", entretien);
                 	this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
                 }
                 else response.sendError(HttpServletResponse.SC_NOT_FOUND);

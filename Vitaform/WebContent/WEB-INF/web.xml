@@ -52,6 +52,15 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>AjouterEntretienMedical</servlet-name>
+    <servlet-class>servlets.AjouterEntretienMedical</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterEntretienMedical</servlet-name>
+    <url-pattern>/ajouter-entretien-medical</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>Agenda</servlet-name>
     <servlet-class>servlets.Agenda</servlet-class>
   </servlet>

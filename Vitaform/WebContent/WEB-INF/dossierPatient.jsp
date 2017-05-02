@@ -55,7 +55,24 @@
                     	</div>
                 	</div>
             	</div>
-        	</div>
+            	<c:if test="${not empty entretien}">
+	            	<div class="col-lg-12">
+	               			<div class="panel panel-default">
+		                      <div class="panel-heading">
+		                          Entretien initial
+		                      </div>
+	          				  <div class="panel-body">
+	                       		<div class="form-group">
+	                       			<p> Faculte : <c:out value="${entretien.faculte}" /></p>
+		                            <p> Cursus : <c:out value="${entretien.cursus}" /></p>
+		                            <p> Orientation Scolaire : <c:out value="${entretien.orientationScolaire}" /></p>
+		                            <p> Annees Toulouse : <c:out value="${entretien.anneesToulouse}" /></p>
+		                            <p> Origine Familiale : <c:out value="${entretien.origineFamiliale}" /></p>
+		                            <p> Origine Familiale autre : <c:out value="${entretien.origineFamilialeAutre}" /></p>
+		                        </div>
+		                     </div>
+	        	   </div>
+        	   </c:if>
 		</div>
 		
 		<!-- jQuery -->

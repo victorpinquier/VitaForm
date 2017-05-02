@@ -63,7 +63,7 @@
 	                            <a href="${pageContext.request.contextPath}/entretien-initial">Entretien initial</a>
 	                        </li>
 	                        <li>
-	                            <a href="#">Dossier spécifique</a>
+	                            <a href="${pageContext.request.contextPath}/ajouter-entretien-medical">Entretien spécifique</a>
 	                        </li>
                         </ul>
 					</li>
