@@ -37,7 +37,7 @@
             </div>
             <!-- /.row -->
             <div class="row">
-                   	<form role="form" method="post" action="entretien-initial">
+                   	<form role="form" method="post" action="ajouter-entretien-medical">
                    		<div class="col-lg-12">
                    			<div class="panel panel-default">
 		                        <div class="panel-heading">

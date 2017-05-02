@@ -76,14 +76,14 @@ public class AjouterEntretienMedical extends HttpServlet {
         }
         
         /* Objet du formulaire */
-        AjouterEntretienInitialForm form = new AjouterEntretienInitialForm();
+        //AjouterEntretienInitialForm form = new AjouterEntretienInitialForm();
         
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
-        EntretienInitial entretien = form.ajouterEntretienInitial(request);
+        //EntretienInitial entretien = form.ajouterEntretienInitial(request);
 
         /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( "form", form );
-        request.setAttribute( "entretien", entretien );
+        //request.setAttribute( "form", form );
+        //request.setAttribute( "entretien", entretien );
 
         /* Transmission de la paire d'objets request/response à notre JSP */
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
