@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/Vitaform/">Vitaform</a>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/">Vitaform</a>
 		</div>
 		<!-- /.navbar-header -->
 
@@ -48,19 +48,19 @@
 						<!-- /input-group -->
 					</li>
 					<li>
-						<a href="/Vitaform/"><i class="fa fa-dashboard fa-fw"></i> Accueil</a>
+						<a href="${pageContext.request.contextPath}"><i class="fa fa-dashboard fa-fw"></i> Accueil</a>
 					</li>
 					<li>
-						<a href="liste-patients"><i class="fa fa-table fa-fw"></i> Liste des patients</a>
+						<a href="${pageContext.request.contextPath}/liste-patients"><i class="fa fa-table fa-fw"></i> Liste des patients</a>
 					</li>
 					<li>
 						<a href="#"><i class="fa fa-edit fa-fw"></i> Formulaires <span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
 	                        <li>
-	                            <a href="ajouter-patient">Ajout de patient</a>
+	                            <a href="${pageContext.request.contextPath}/ajouter-patient">Ajout de patient</a>
 	                        </li>
 	                        <li>
-	                            <a href="premier-entretien">Premier entretien</a>
+	                            <a href="${pageContext.request.contextPath}/entretien-initial">Entretien initial</a>
 	                        </li>
 	                        <li>
 	                            <a href="#">Dossier spécifique</a>
@@ -69,7 +69,7 @@
 					</li>
 					
 					<li>
-						<a href="agenda"><i class="fa fa-calendar fa-fw"></i> Agenda</a>
+						<a href="${pageContext.request.contextPath}/agenda"><i class="fa fa-calendar fa-fw"></i> Agenda</a>
 					</li>
 					
 				</ul>

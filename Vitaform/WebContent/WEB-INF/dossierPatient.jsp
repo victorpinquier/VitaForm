@@ -48,6 +48,7 @@
                         <div class="panel-body">
                         	<p> Nom : <c:out value="${patient.nom}" /> </p>
 							<p> Prenom : <c:out value="${patient.prenom}" /></p>
+							<p> Sexe : <c:out value="${patient.sexe}" /></p>
 							<p> Date de naissance : <c:out value="${patient.dateNaissance}" /></p>
 							<p> Adresse Mail : <c:out value="${patient.adresseMail}" /></p>
 							<p> Numéro de téléphone : <c:out value="${patient.telephone}" /></p>

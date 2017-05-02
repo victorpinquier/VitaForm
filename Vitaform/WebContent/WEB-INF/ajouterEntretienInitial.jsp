@@ -21,7 +21,7 @@
 		<!-- Custom Fonts -->
 		<link type="text/css" rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
 		
-        <title>Premier entretien</title>
+        <title>Entretien initial</title>
     </head>
 	
 	<body>
@@ -30,28 +30,31 @@
 		<div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Premier entretien</h1>
+                    <h1 class="page-header">Entretien initial</h1>
                     <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div class="row">
-                   	<form role="form" method="post" action="ajouter-patient">
+                   	<form role="form" method="post" action="entretien-initial">
                    		<div class="col-lg-12">
                    			<div class="panel panel-default">
 		                        <div class="panel-heading">
-		                            Etat civil
+		                            Patient
 		                        </div>
 	                       		<div class="panel-body">
 	                       		
                            			<div class="form-group">
 			                            <label>Choix du patient</label>
-			                            <select class="form-control" name="choixBourse">
-			                                <option id="choixPatient1" value="1">Patient1</option>
-			                                <option id="choixPatient2" value="2">Patient2</option>
-			                                <option id="choixPatient3" value="3">Patient3</option>
-			                            </select>
+			                            
+			                            <select class="form-control" name="choixPatient">
+				                            <c:forEach items="${patients}" var="patient">
+				                            	<option value="<c:out value="${patient.idPatient}" />"> <c:out value="${patient.nom}" />
+				                            	 <c:out value="${patient.prenom}" /> - <c:out value="${patient.dateNaissance}" /></option>
+											</c:forEach>
+										</select>
+
 			                        </div>
                                    	
 	                           	</div>

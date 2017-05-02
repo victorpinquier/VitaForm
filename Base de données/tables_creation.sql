@@ -4,22 +4,11 @@
 		dossiermedical
 		entretieninitial
 		patient
-		patientmesures
-		patientnutrition
-		patientobjectifs
-		patientphysique
-		patientpsychologique
 
 */
 
-
 DROP TABLE DossierMedical;
 DROP TABLE EntretienInitial;
-DROP TABLE PatientMesures;
-DROP TABLE PatientNutrition;
-DROP TABLE PatientPhysique;
-DROP TABLE PatientPsychologique;
-DROP TABLE PatientObjectifs;
 DROP TABLE CompteRendu;
 DROP TABLE Patient;
 
@@ -32,7 +21,15 @@ Sexe varchar(255),
 DateNaissance date,
 Telephone varchar(255),
 AdresseMail varchar(255),
-Faculte MEDIUMINT,
+
+PRIMARY KEY (IdPatient)
+
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE EntretienInitial
+(
+IdEntretientInit MEDIUMINT,
+Faculte MEDIUMINT, -- contexte
 Cursus MEDIUMINT,
 OrientationScolaire varchar(255),
 AnneesToulouse varchar(255),
@@ -50,20 +47,8 @@ Preciser text,
 MedecinTraitant boolean,
 MedecinTraitantDetails text,
 AutresSuivis text,
-PRIMARY KEY (IdPatient),
-FOREIGN KEY (Faculte) REFERENCES FaculteValues(idvalue),
-FOREIGN KEY (Cursus) REFERENCES CursusValues(idvalue),
-FOREIGN KEY (OrigineFamiliale) REFERENCES OrigineFamilialeValues(idvalue),
-FOREIGN KEY (SituationFamiliale) REFERENCES SituationFamilialeValues(idvalue),
-FOREIGN KEY (LieuDeVie) REFERENCES LieuDeVieValues(idvalue),
-FOREIGN KEY (Bourse) REFERENCES BoursesValues(idvalue),
-FOREIGN KEY (Orientation) REFERENCES OrientationValues(idvalue)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE DossierMedical
-(
-IdDossier MEDIUMINT,
-Hyperglicemie boolean,
+Hyperglicemie boolean, -- dossier medical init
 HyperglicemieDetails text,
 DiabeteT2 boolean,
 DiabeteT2Details text,
@@ -95,14 +80,8 @@ ParentsHyperlipidémie boolean,
 ParentsHyperlipidémieDetails text,
 AccidentVasculairePrecoce boolean,
 AccidentVasculairePrecoceDetails text,
-PRIMARY KEY (IdDossier),
-FOREIGN KEY (IdDossier) REFERENCES Patient(IdPatient)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE EntretienInitial
-(
-IdEntretientInit MEDIUMINT,
-PoidsNaissance varchar(255),
+PoidsNaissance varchar(255), -- histoire poids
 SurchagePonderaleEnfance boolean,
 surchagePonderaleAdolescence boolean,
 ObesiteEnfance boolean,
@@ -113,55 +92,43 @@ AgePoidsMaximum varchar(255),
 PriseEnChargeAnterieure boolean,
 PriseEnChargeAnterieureDetails text,
 Commentaires text,
+
+PRIMARY KEY (IdEntretientInit),
+FOREIGN KEY (IdEntretientInit) REFERENCES Patient(IdPatient),
+FOREIGN KEY (Faculte) REFERENCES FaculteValues(idvalue),
+FOREIGN KEY (Cursus) REFERENCES CursusValues(idvalue),
+FOREIGN KEY (OrigineFamiliale) REFERENCES OrigineFamilialeValues(idvalue),
+FOREIGN KEY (SituationFamiliale) REFERENCES SituationFamilialeValues(idvalue),
+FOREIGN KEY (LieuDeVie) REFERENCES LieuDeVieValues(idvalue),
+FOREIGN KEY (Bourse) REFERENCES BoursesValues(idvalue),
+FOREIGN KEY (Orientation) REFERENCES OrientationValues(idvalue)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE DossierMedical
+(
+IdDossierMedical MEDIUMINT,
+Taillecm  DECIMAL(10,2), -- examen
+Poidskg DECIMAL(10,2),
+IMC DECIMAL(10,1),
+Tourtaillecm  DECIMAL(10,2),
+TA varchar(255),
 HyperAndrogenie boolean,
 HyperAndrogenieDetails text,
 HyperCorticisme boolean,
 HyperCorticismeDetails text,
 Dysthyroidie boolean,
 DysthyroidieDetails text,
-PRIMARY KEY (IdEntretientInit),
-FOREIGN KEY (IdEntretientInit) REFERENCES Patient(IdPatient)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE PatientMesures
-(
-IdMesures MEDIUMINT,
-Taille float(3,2),
-Poids float(3,2),
-IMC float(3,2),
-TourDeTaille float(3,2),
-TA varchar(255),
-PRIMARY KEY (IdMesures),
-FOREIGN KEY (IdMesures) REFERENCES Patient(IdPatient)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE PatientNutrition
-(
-IdNutrition MEDIUMINT,
-PrisePetitDejeuner MEDIUMINT,
+PrisePetitDejeuner MEDIUMINT, -- evaluation nutri
 NombreFruitsEtLegumes varchar(255),
 Autre text,
 ComportementAlimentaire text,
-PRIMARY KEY (IdNutrition),
-FOREIGN KEY (IdNutrition) REFERENCES Patient(IdPatient),
-FOREIGN KEY (PrisePetitDejeuner) REFERENCES PrisePetitDejeunerValues(idvalue)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE PatientPhysique
-(
-IdPhysique MEDIUMINT,
-Marche boolean,
+Marche boolean, -- activite physique
 QAP varchar(255),
 Resultats MEDIUMINT,
-PRIMARY KEY (IdPhysique),
-FOREIGN KEY (IdPhysique) REFERENCES Patient(IdPatient),
-FOREIGN KEY (Resultats) REFERENCES ResultatsValues(idvalue)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE PatientPsychologique
-(
-IdPsychologique MEDIUMINT,
-SigneDepressif boolean,
+SigneDepressif boolean, -- etat psychologique
 SigneDepressifDetails text,
 SuiviExistant boolean,
 SuiviExistantDetails text,
@@ -171,26 +138,26 @@ SensationIsolement boolean,
 SensationIsolementDetails text,
 TestScoff varchar(255),
 ResultatsScoff varchar(255),
-PRIMARY KEY (IdPsychologique),
-FOREIGN KEY (IdPsychologique) REFERENCES Patient(IdPatient)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE PatientObjectifs
-(
-IdObjectif MEDIUMINT,
-FINRISK varchar(255),
+FINRISK varchar(255), -- resultats objectifs
 SyndromeMetabolique boolean,
 Motivation text,
 Objectif text,
 OrientationVitaform MEDIUMINT,
 OrientationSimpss MEDIUMINT,
 OrientationExterne MEDIUMINT,
-PRIMARY KEY (IdObjectif),
-FOREIGN KEY (IdObjectif) REFERENCES Patient(IdPatient),
+
+IdPatient MEDIUMINT,
+PRIMARY KEY (IdDossierMedical),
+FOREIGN KEY (IdPatient) REFERENCES Patient(IdPatient),
+FOREIGN KEY (PrisePetitDejeuner) REFERENCES PrisePetitDejeunerValues(idvalue),
+FOREIGN KEY (Resultats) REFERENCES ResultatsValues(idvalue),
 FOREIGN KEY (OrientationVitaform) REFERENCES OrientationVitaformValues(idvalue),
 FOREIGN KEY (OrientationSimpss) REFERENCES OrientationSimpssValues(idvalue),
 FOREIGN KEY (OrientationExterne) REFERENCES OrientationExterneValues(idvalue)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 CREATE TABLE CompteRendu
 (

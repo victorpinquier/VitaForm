@@ -35,14 +35,17 @@ public class DossierPatient extends HttpServlet {
         		int idPatient = Integer.parseInt(request.getPathInfo().split("/")[1]);
                 Patient patient = PatientDAO.getPatient(idPatient);
                 
-                if(patient != null) request.setAttribute("patient", patient);
-                else response.sendRedirect( request.getContextPath() + ACCES_PUBLIC );
+                if(patient != null){
+                	request.setAttribute("patient", patient);
+                	this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
+                }
+                else response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 
             } catch (SQLException e) {
                 request.setAttribute("erreur", "Echec lors de la récupération.");
                 e.printStackTrace();
             }
-        	this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
+        	
         }
     }
 	

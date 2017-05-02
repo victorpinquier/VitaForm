@@ -27,23 +27,6 @@ public class PatientForm {
     private static final String CHAMP_DATENAISSANCE   = "datenaissance";
     private static final String CHAMP_TELEPHONE   = "tel";
     private static final String CHAMP_MAIL   = "mail";
-    private static final String CHAMP_FACULTE   = "choixFaculte";
-    private static final String CHAMP_CURSUS   = "choixCursus";
-    private static final String CHAMP_ORIENTATIONSCOLAIRE   = "orientationscolaire";
-    private static final String CHAMP_ANNEESTLSE   = "nbantlse";
-    private static final String CHAMP_ORIGINEFAM   = "choixOrigineFam";
-    private static final String CHAMP_SITUATIONFAM   = "choixSituationFam";
-    private static final String CHAMP_LIEUVIE   = "choixLieuVie";
-    private static final String CHAMP_DIFFFINAN   = "optionsDF";
-    private static final String CHAMP_BOURSE   = "choixBourse";
-    private static final String CHAMP_SERVICESOCIAL   = "optionsSS";
-    private static final String CHAMP_SERVICESOCIALDETAIL   = "servicesocialdetail";
-    private static final String CHAMP_PANIERCAMPUS   = "optionsPC";
-    private static final String CHAMP_ORIENTATION   = "choixOrientation";
-    private static final String CHAMP_PRECISER   = "preciser";
-    private static final String CHAMP_MEDECINTRAITANT   = "optionsMT";
-    private static final String CHAMP_MEDECINTRAITANTDETAIL   = "medecintraitantdetail";
-    private static final String CHAMP_AUTRESSUIVIS   = "autressuivis";
     
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
@@ -69,23 +52,6 @@ public class PatientForm {
         String datenaissance = request.getParameter(CHAMP_DATENAISSANCE);
         String telephone   = request.getParameter(CHAMP_TELEPHONE);
         String mail = request.getParameter(CHAMP_MAIL);
-        int faculte   = Integer.parseInt(request.getParameter(CHAMP_FACULTE));
-        int cursus   = Integer.parseInt(request.getParameter(CHAMP_CURSUS));
-        String orientationscolaire   = request.getParameter(CHAMP_ORIENTATIONSCOLAIRE);
-        String nbantlse   = request.getParameter(CHAMP_ANNEESTLSE);
-        int originefam   = Integer.parseInt(request.getParameter(CHAMP_ORIGINEFAM));
-        int situationfam   = Integer.parseInt(request.getParameter(CHAMP_SITUATIONFAM));
-        int lieuvie   = Integer.parseInt(request.getParameter(CHAMP_LIEUVIE));
-        int difffinan   = Integer.parseInt(request.getParameter(CHAMP_DIFFFINAN));
-        int bourse   = Integer.parseInt(request.getParameter(CHAMP_BOURSE));
-        int servicesocial   = Integer.parseInt(request.getParameter(CHAMP_SERVICESOCIAL));
-        String servicesocialdetail   = request.getParameter(CHAMP_SERVICESOCIALDETAIL);
-        int paniercampus   = Integer.parseInt(request.getParameter(CHAMP_PANIERCAMPUS));
-        int orientation   = Integer.parseInt(request.getParameter(CHAMP_ORIENTATION));
-        String preciser   = request.getParameter(CHAMP_PRECISER);
-        int medecintraitant   = Integer.parseInt(request.getParameter(CHAMP_MEDECINTRAITANT));
-        String medecintraitantdetail   = request.getParameter(CHAMP_MEDECINTRAITANTDETAIL);
-        String autressuivis   = request.getParameter(CHAMP_AUTRESSUIVIS);
         
         Patient patient = new Patient();
         
@@ -135,7 +101,7 @@ public class PatientForm {
 
             	/* Création de l'objet gérant les requêtes préparées */
             	PreparedStatement preparedStatement = connexion.prepareStatement( "INSERT INTO Patient VALUES"
-                		+ "(NULL, ?, ?, ?, STR_TO_DATE(?, '%d/%m/%Y'),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);" );
+                		+ "(NULL, ?, ?, ?, STR_TO_DATE(?, '%d/%m/%Y'),?,?);" );
             	
                 preparedStatement.setString(1, prenom);
                 preparedStatement.setString(2, nom);
@@ -143,24 +109,6 @@ public class PatientForm {
                 preparedStatement.setString(4, datenaissance);
                 preparedStatement.setString(5, telephone);
                 preparedStatement.setString(6, mail);
-                preparedStatement.setInt(7, faculte);
-                preparedStatement.setInt(8, cursus);
-                preparedStatement.setString(9, orientationscolaire);
-                preparedStatement.setString(10, nbantlse);
-                preparedStatement.setInt(11, originefam);
-                preparedStatement.setString(12, null);
-                preparedStatement.setInt(13, situationfam);
-                preparedStatement.setInt(14, lieuvie);
-                preparedStatement.setInt(15, difffinan);
-                preparedStatement.setInt(16, bourse);
-                preparedStatement.setInt(17, servicesocial);
-                preparedStatement.setString(18, servicesocialdetail);
-                preparedStatement.setInt(19, paniercampus);
-                preparedStatement.setInt(20, orientation);
-                preparedStatement.setString(21, preciser);
-                preparedStatement.setInt(22, medecintraitant);
-                preparedStatement.setString(23, medecintraitantdetail);
-                preparedStatement.setString(24, autressuivis);
                 
                 /* Exécution de la requête */
                 int statut = preparedStatement.executeUpdate();
@@ -217,6 +165,8 @@ public class PatientForm {
     		} catch (ParseException e1) {
     			throw new Exception("La date n'est pas du format dd/MM/yyyy.");
     		}
+        } else {
+            throw new Exception("Merci de saisir une adresse mail.");
         }
     }
     
@@ -228,8 +178,6 @@ public class PatientForm {
            if ( !mail.matches("([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)") ) {
                throw new Exception("Merci de saisir une adresse mail valide.");
            }
-       } else {
-           throw new Exception("Merci de saisir une adresse mail.");
        }
 }
 }
