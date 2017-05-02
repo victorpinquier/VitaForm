@@ -20,10 +20,12 @@
 		<link type="text/css" rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
 		
 	<link rel='stylesheet' href='static/fullcalendar/fullcalendar.css' />
-	<link rel='stylesheet' href='style.css' />
+	<link rel='stylesheet' href='static/agenda/style.css' />
 
 	<script src='static/fullcalendar/lib/jquery.min.js'></script>
 	<script src='static/fullcalendar/lib/jquery.qtip.min.js'></script>
+	
+	<script src="static/metisMenu/metisMenu.min.js"></script>
 
 	<script src='static/fullcalendar/lib/moment.min.js'></script>
 	<script src='static/fullcalendar/fullcalendar.js'></script>
@@ -55,7 +57,10 @@
 						professionnel: "Medecin",
 						description: 'Voir avancement du programme de remise en forme',
 						batiment: 'U3 paul sab',
-						nomEtudiant: 'XXXXXX'
+						nomEtudiant: 'XXXXXX',
+						telEtudiant: '0611223344',
+						mailEtudiant: 'xxxx@paulsab.fr',
+						dateNaissanceEtudiant: '12-02-1989'
 					},
 					{
 						title: '4eme rdv XXXXXX',
@@ -67,7 +72,10 @@
 						professionnel: "Medecin",
 						description: 'Voir avancement du programme de remise en forme',
 						batiment: 'U3 paul sab',
-						nomEtudiant: 'XXXXXX'
+						nomEtudiant: 'XXXXXX',
+						telEtudiant: '0611223344',
+						mailEtudiant: 'xxxx@paulsab.fr',
+						dateNaissanceEtudiant: '12-02-1989'
 					},
 					{
 						title: 'Premier RDV YYYYYYY',
@@ -79,7 +87,10 @@
 						professionnel: "Medecin",
 						description: 'Faire un point sur les besoins de YYYYYYY',
 						batiment: 'U3 paul sab',
-						nomEtudiant: 'YYYYYY'
+						nomEtudiant: 'XXXXXX',
+						telEtudiant: '0611223344',
+						mailEtudiant: 'xxxx@paulsab.fr',
+						dateNaissanceEtudiant: '12-02-1989'
 					},
 					{
 						title: 'Premier RDV AAAAAAA',
@@ -91,7 +102,10 @@
 						professionnel: "Medecin",
 						description: 'Faire un point sur les besoins de AAAAAAA',
 						batiment: 'U3 paul sab',
-						nomEtudiant: 'AAAAAAAA'
+						nomEtudiant: 'XXXXXX',
+						telEtudiant: '0611223344',
+						mailEtudiant: 'xxxx@paulsab.fr',
+						dateNaissanceEtudiant: '12-02-1989'
 					},
 					{
 						title: 'Conférence',
@@ -105,12 +119,46 @@
 						title: '5eme rdv avec XXXXXXX',
 						start: '2017-06-13T07:00:00',
 						professionnel: "Diéteticien",
-						color : '#741236'
+						color : '#741236',
+						nomEtudiant: 'XXXXXX',
+						telEtudiant: '0611223344',
+						mailEtudiant: 'xxxx@paulsab.fr',
+						dateNaissanceEtudiant: '12-02-1989'
 					},
 				],
+				
+				eventMouseover: function(calEvent, jsEvent) {
+					if(calEvent.nomEtudiant != null){
+					    var tooltip = '<div class="tooltipevent infobulle" style="width:200px;height:100px;background:#fcfcfc;font-size: 10px;position:absolute;z-index:10001;""'
+					    +'<p>Nom: ' + calEvent.nomEtudiant + '</p>'
+					    +'<p>Tel: ' + calEvent.telEtudiant + '</p>'
+					    +'<p>Naissance: ' + calEvent.dateNaissanceEtudiant + '</p>'
+					    +'<p>E-mail:' + calEvent.mailEtudiant + '</p>'
+					    +'</div>';
+					    var $tooltip = $(tooltip).appendTo('body');
+					}
+
+				    $(this).mouseover(function(e) {
+				        $(this).css('z-index', 10000);
+				        $tooltip.fadeIn('500');
+				        $tooltip.fadeTo('10', 1.9);
+				    }).mousemove(function(e) {
+				        $tooltip.css('top', e.pageY + 10);
+				        $tooltip.css('left', e.pageX + 20);
+				    });
+				},
+
+				eventMouseout: function(calEvent, jsEvent) {
+				    $(this).css('z-index', 8);
+				    $('.tooltipevent').remove();
+				},
+				
 				eventClick: function(event) {
 					
 						$('.nom').text(event.nomEtudiant);
+						$('.telEtud').text(event.telEtudiant);
+						$('.dateNaiEtud').text(event.dateNaissanceEtudiant);
+						$('.mailEtud').text(event.mailEtudiant);
 						$('.descrip').text(event.description);
 						$('.heure').text(event.heureDebut + ' - ' + event.heureFin);
 						$('.btm').text(event.batiment);
@@ -145,10 +193,10 @@
 				</ul>
 
                 <!-- Integration de l'agenda -->
-                <div class="container">
+                <div class="col-md-12 container">
 					<div class="tab-content">
 
-						<div id="home" class="tab-pane fade in active">
+						<div id="home" class="col-md-12 tab-pane fade in active">
 							<div class="col-md-8">
 						
 								<div id="calendar"></div>
@@ -156,31 +204,79 @@
 							</div>
 
 							<div id="col-md-4 description">
-								<h1>Plus d'informations</h1>
+								<h1>Informations</h1>
 
 								<ul>
-									<li>Rendez vous avec : <p class="nom"></p></li>
-									<li>Professionnel : <p class="professionnel"></p></li>
+									<li>Professionnels : <p class="professionnel"></p></li>
 									<li>Description : <p class="descrip"></p></li>
 									<li>Heure du rendez-vous: <p class="heure"></p></li>
 									<li>Lieu: <p class="btm"></p></li>
-									<li>Récapitulatif du profil étudiant: <a href="#">Ici</a></li>
+									
+									<li>Rendez vous:
+										<ul >
+											<li>Nom : <p class="nom"></p></li>
+											<li>Téléphone: <p class="telEtud"></p></li>
+											<li>E-mail: <p class="mailEtud"></p></li>
+											<li>Date naissance: <p class="dateNaiEtud"></p></li>
+										</ul>
+									</li>
 								</ul>
 
 							</div>
 						</div>
 
 						<div id="ajout" class="tab-pane fade">
-						<div class="col-md-8">
-						    <h3>Ajout d'un rendez-vous</h3>
-						    <p>Some content in menu 1.</p>
-						    </div>
+
+						    <form role="form" method="post" action="ajouter-rdv">
+							    <div class="col-lg-8">
+		                   			<div class="panel panel-default ajout">
+				                        <div class="panel-heading">
+				                            Ajouter un rendez-vous
+				                        </div>
+			                       		<div class="panel-body">
+		                           			<div class="form-group">
+		                                    	<label>Titre du RDV</label>
+		                                    	<input class="form-control" id="titre" name="titre" value="" maxlength="60">
+		                                    </div>
+		                                    <div class="form-group">
+		                                    	<label>Date</label>
+		                                    	<input class="form-control" id="date" name="date" value="" maxlength="60">
+		                                    </div>
+                         		            <div class="form-group">
+		                                    	<label>Heure de début</label>
+		                                    	<input class="form-control" id="heureDebut" name="heureDebut" value="" maxlength="60">
+		                                    </div>
+                         		            <div class="form-group">
+		                                    	<label>Heure de fin</label>
+		                                    	<input class="form-control" id="heureFin" name="heureFin" value="" maxlength="60">
+		                                    </div>
+		                                    <div class="form-group">
+		                                    	<label>Nom de l'étudiant</label>
+		                                    	<input class="form-control" id="nomEtudiant" name="nomEtudiant" value="" maxlength="60">
+		                                    </div>
+		                                    <div class="form-group">
+		                                    	<label>Lieu du RDV</label>
+		                                    	<input class="form-control" id="lieu" name="lieu" value="" maxlength="60">
+		                                    </div>
+		                                    <div class="form-group">
+		                                    	<label>Description du RDV</label>
+		                                    	<textarea class="form-control" id="description" name="description" rows="5"></textarea>
+		                                    </div>
+	                                    </div>
+	                                 </div>
+	                                 <input id="envoyerForm" type="submit" class="btn btn-default" value="Enregistrer le RDV">
+                               </div>
+	                                    
+						  		
+						    </form>
+						    
 						</div>
 
 						<div id="modifier" class="tab-pane fade">
 						<div class="col-md-8">
-						    <h3>Modifier ou supprimer un rendez-vous</h3>
-						    <p>Some content in menu 1.</p>
+						    <h3>Veuillez sélectionner le rendez-vous à modifier</h3>
+						    
+						    
 						    </div>
 						</div>
 					</div>
@@ -191,9 +287,5 @@
 			
 		</div>
 		
-	<script src='static/jquery.min.js'></script>
-	<script src='static/fullcalendar/lib/moment.min.js'></script>
-	<script src='static/bootstrap/js/bootstrap.js'></script>
-	<script src='static/fullcalendar/fullcalendar.js'></script>
 	</body>
 </html>

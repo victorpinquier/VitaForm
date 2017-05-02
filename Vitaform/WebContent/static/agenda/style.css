@@ -1,0 +1,18 @@
+.infobulle {
+	border: 1px #000000 dashed;
+	padding-left: 5px;
+}
+
+#calendar {
+	margin-top: 10px;
+	width: 100%;
+}
+
+.descrip{
+	width: 300px;
+	overflow-x: hidden;
+}
+
+.ajout{
+	margin-top: 20px;
+}
