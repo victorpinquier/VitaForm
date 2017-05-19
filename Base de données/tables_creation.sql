@@ -76,8 +76,8 @@ ParentsObese boolean,
 ParentsObeseDetails text,
 ParentsDiabete boolean,
 ParentsDiabeteDetails text,
-ParentsHyperlipidémie boolean,
-ParentsHyperlipidémieDetails text,
+ParentsHyperlipidemie boolean,
+ParentsHyperlipidemieDetails text,
 AccidentVasculairePrecoce boolean,
 AccidentVasculairePrecoceDetails text,
 
@@ -85,7 +85,7 @@ PoidsNaissance varchar(255), -- histoire poids
 SurchagePonderaleEnfance boolean,
 surchagePonderaleAdolescence boolean,
 ObesiteEnfance boolean,
-ObeisteAdolescence boolean,
+ObesiteAdolescence boolean,
 KilosTroisAnnees varchar(255),
 PoidsMaximum varchar(255),
 AgePoidsMaximum varchar(255),
@@ -139,7 +139,7 @@ SensationIsolementDetails text,
 TestScoff varchar(255),
 ResultatsScoff varchar(255),
 
-FINRISK varchar(255), -- resultats objectifs
+FINDRISK varchar(255), -- resultats objectifs
 SyndromeMetabolique boolean,
 Motivation text,
 Objectif text,

@@ -9,7 +9,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${pageContext.request.contextPath}/">Vitaform</a>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/"> <span class="magenta">Vita</span><span class="pourpre">form</span></a>
 		</div>
 		<!-- /.navbar-header -->
 

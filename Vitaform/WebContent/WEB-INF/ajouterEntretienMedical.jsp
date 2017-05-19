@@ -69,16 +69,16 @@
           				  <div class="panel-body">
                        		<div class="form-group">
 	                            <label>Taille (en cm</label>
-	                            <input type="text" class="form-control" id="orientation" name="orientation" value="" maxlength="60">
+	                            <input type="text" class="form-control" id="taille" name="taille" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Poids (en kg)</label>
-	                            <input type="text" class="form-control" id="orientation" name="orientation" value="" maxlength="60">
+	                            <input type="text" class="form-control" id="poids" name="poids" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
 	                            <div class="form-group">
 	                           		<label>Tour de taille (en cm)</label>
-	                            	<input type="text" class="form-control" id="orientation" name="orientation" value="" maxlength="60">
+	                            	<input type="text" class="form-control" id="tourTaille" name="tourTaille" value="" maxlength="60">
                                 </div>
 	                        </div>
 
@@ -93,7 +93,7 @@
                             </div>
                             
 	                        <div class="form-group">
-	                        	<input type="text" class="form-control" id="hyperandrogenietext" name="hyperandrogenietext" value="" maxlength="60">
+	                        	<input type="text" class="form-control" id="hyperandrogenieDetails" name="hyperandrogenieDetails" value="" maxlength="60">
 	                        </div>
 	                        
 	                        <div class="form-group">
@@ -106,7 +106,7 @@
 	                            </label>
 	                        </div>
 	                        <div class="form-group">
-	                        	<input type="text" class="form-control" id="hypercorticismetext" name="hypercorticismetext" value="" maxlength="60">
+	                        	<input type="text" class="form-control" id="hypercorticismeDetails" name="hypercorticismeDetails" value="" maxlength="60">
 	                        </div>
 	                        
 	                        <div class="form-group">
@@ -119,15 +119,13 @@
 	                            </label>
 	                        </div>
 	                        <div class="form-group">
-	                        	<input type="text" class="form-control" id="dysthyroidietext" name="dysthyroidietext" value="" maxlength="60">
+	                        	<input type="text" class="form-control" id="dysthyroidieDetails" name="dysthyroidieDetails" value="" maxlength="60">
 	                        </div>
 	                        
-	                        <div class="form-group">
-	                            <div class="form-group">
-	                           		<label>T.A (en mmHg)</label>
-	                            	<input type="text" class="form-control" id="orientation" name="orientation" value="" maxlength="60">
-                                </div>
-	                        </div>
+                            <div class="form-group">
+                           		<label>T.A (en mmHg)</label>
+                            	<input type="text" class="form-control" id="TAmmhg" name="TAmmhg" value="" maxlength="60">
+                            </div>
                            
                         </div>
                       </div>
@@ -148,6 +146,194 @@
 	                            </select>
 	                        </div>
 	                        
+	                        <div class="form-group">
+                           		<label>nombre de Fruits et Légumes/j</label>
+                            	<input type="text" class="form-control" id="nombreFruitsEtLegumes" name="nombreFruitsEtLegumes" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>Autres</label>
+                            	<input type="text" class="form-control" id="autres" name="autres" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>comportement alimentaire particulier</label>
+                            	<input type="text" class="form-control" id="comportementAlimentaire" name="comportementAlimentaire" value="" maxlength="60">
+                            </div>
+	                        
+	                     </div>
+	                     <!-- /.panel-body -->
+	                   </div>
+	                   <!-- /.panel -->
+	               </div>
+	                <!-- /.col-lg-12 (nested) -->
+	                
+	                <div class="col-lg-12">
+               			<div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          Activité physique
+	                      </div>
+          				  <div class="panel-body">
+                       		<div class="form-group">
+	                            <label>Marche ou équiv ≥ 30 min/j</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsMarche" id="optionsMarche1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsMarche" id="optionsMarche2" value="1">Oui
+	                            </label>
+                            </div>
+	                        
+	                        <div class="form-group">
+                           		<label>QAPs</label>
+                            	<input type="text" class="form-control" id="QAP" name="QAP" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Résultats</label>
+	                            <select class="form-control" name="choixResultats">
+	                                <option id="choixBourse1" value="1">Oui</option>
+	                                <option id="choixBourse2" value="2">Non</option>
+	                                <option id="choixBourse3" value="3">En cours</option>
+	                            </select>
+	                        </div>
+	                     </div>
+	                     <!-- /.panel-body -->
+	                   </div>
+	                   <!-- /.panel -->
+	               </div>
+	                <!-- /.col-lg-12 (nested) -->
+	                
+	                <div class="col-lg-12">
+               			<div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          Etat psychologique
+	                      </div>
+          				  <div class="panel-body">
+                            
+                            <div class="form-group">
+	                            <label>Signes dépressifs</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSigneDepressif" id="optionsSigneDepressif1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSigneDepressif" id="optionsSigneDepressif2" value="1">Oui
+	                            </label>
+                            </div>
+                            <div class="form-group">
+	                        	<label>Détails</label>
+	                        	<input type="text" class="form-control" name="optionsSigneDepressifDetails">
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Suivi existant</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSuiviExistant" id="optionsSuiviExistant1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSuiviExistant" id="optionsSuiviExistant2" value="1">Oui
+	                            </label>
+                            </div>
+                            <div class="form-group">
+	                        	<label>Détails</label>
+	                        	<input type="text" class="form-control" name="optionsSuiviExistantDetails">
+                            </div>
+                            
+                            <div class="form-group">
+	                        	<label>EVA Sommeil</label>
+	                        	<input type="text" class="form-control" name="EVASommeil">
+                            </div>
+                            
+                            <div class="form-group">
+	                        	<label>EVA Stress</label>
+	                        	<input type="text" class="form-control" name="EVAStress">
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Sensation d'isolement</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSensationIsolement" id="optionsSensationIsolement1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSensationIsolement" id="optionsSensationIsolement2" value="1">Oui
+	                            </label>
+                            </div>
+                            <div class="form-group">
+	                        	<label>Détails</label>
+	                        	<input type="text" class="form-control" name="optionsSensationIsolementDetails">
+                            </div>
+                            
+                            <div class="form-group">
+	                        	<label>Test de Scoff</label>
+	                        	<input type="text" class="form-control" name="ResultatsScoff">
+                            </div>
+	                        
+	                     </div>
+	                     <!-- /.panel-body -->
+	                   </div>
+	                   <!-- /.panel -->
+	               </div>
+	                <!-- /.col-lg-12 (nested) -->
+	                
+	                <div class="col-lg-12">
+               			<div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          Résultats et objectifs
+	                      </div>
+          				  <div class="panel-body">
+	                        
+	                        <div class="form-group">
+                           		<label>Findrisk</label>
+                            	<input type="text" class="form-control" id="Finrisk" name="Finrisk" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Syndrome métabolique</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSyndromeMetabolique" id="optionsSyndromeMetabolique1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSyndromeMetabolique" id="optionsSyndromeMetabolique2" value="1">Oui
+	                            </label>
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>Motivation</label>
+                            	<input type="text" class="form-control" id="motivation" name="motivation" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>Objectifs</label>
+                            	<input type="text" class="form-control" id="objectifs" name="objectifs" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Orientation Vitaform</label>
+	                            <select class="form-control" name="choixOrientationVitaformIndex">
+	                                <option id="choixBourse1" value="1">Oui</option>
+	                                <option id="choixBourse2" value="2">Non</option>
+	                                <option id="choixBourse3" value="3">En cours</option>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Orientation Simpss</label>
+	                            <select class="form-control" name="choixOrientationSimpssIndex">
+	                                <option id="choixBourse1" value="1">Oui</option>
+	                                <option id="choixBourse2" value="2">Non</option>
+	                                <option id="choixBourse3" value="3">En cours</option>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Orientation Externe</label>
+	                            <select class="form-control" name="choixOrientationExterneIndex">
+	                                <option id="choixBourse1" value="1">Oui</option>
+	                                <option id="choixBourse2" value="2">Non</option>
+	                                <option id="choixBourse3" value="3">En cours</option>
+	                            </select>
+	                        </div>
+                            
 	                     </div>
 	                     <!-- /.panel-body -->
 	                   </div>

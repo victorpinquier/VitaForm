@@ -205,6 +205,367 @@
 	               </div>
 	                <!-- /.col-lg-12 (nested) -->
 	                
+	                <div class="col-lg-12">
+               			<div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          Dossier Médical
+	                      </div>
+          				  <div class="panel-body">
+          				  
+                       		<div class="form-group">
+	                            <label>Hyperglicémie</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHyperglicemie" id="optionsHyperglicemie1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHyperglicemie" id="optionsHyperglicemie2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsHyperglicemieDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Diabete T2</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsDiabeteT2" id="optionsDiabeteT21" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsDiabeteT2" id="optionsDiabeteT22" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsDiabeteT2Details">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Gestationnel</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsGestationnel" id="optionsGestationnel1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsGestationnel" id="optionsGestationnel2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsGestationnelDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Hyperlipidémie</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHyperlipidemie" id="optionsHyperlipidemie1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHyperlipidemie" id="optionsHyperlipidemie2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsHyperlipidemieDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>HTA</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHTA" id="optionsHTA1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsHTA" id="optionsHTA2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsHTADetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Tabac</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsTabac" id="optionsTabac1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsTabac" id="optionsTabac2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsTabacDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Consommation d'Alcool</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAlcool" id="optionsAlcool1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAlcool" id="optionsAlcool2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsAlcoolDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Autres drogues ou addictions</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsDrogue" id="optionsDrogue1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsDrogue" id="optionsDrogue2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsDrogueDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Prise de médicaments</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsMedicament" id="optionsMedicament1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsMedicament" id="optionsMedicament2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsMedicamentDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Pour les femmes : prise de pilule CO</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsPillule" id="optionsPillule1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsPillule" id="optionsPillule2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsPilluleDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Autres ATCD</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAutreAnte" id="optionsAutreAnte1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAutreAnte" id="optionsAutreAnte2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsAutreAnteDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Parents en Surcharge Pondérale</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsSurcharge" id="optionsParentsSurcharge1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsSurcharge" id="optionsParentsSurcharge2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsParentsSurchargeDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Parents obèses</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsObese" id="optionsParentsObese1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsObese" id="optionsParentsObese2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsParentsObeseDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Parents Diabète de type 2</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsDiabete" id="optionsParentsDiabete1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsDiabete" id="optionsParentsDiabete2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsParentsDiabeteDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Parents Hyperlipidémie</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsHyperlipidemie" id="optionsParentsHyperlipidemie1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsParentsHyperlipidemie" id="optionsParentsHyperlipidemie2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsParentsHyperlipidemieDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Accident vasculaire précoce</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAccidentVasculairePrecoce" id="optionsAccidentVasculairePrecoce1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsAccidentVasculairePrecoce" id="optionsAccidentVasculairePrecoce2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsAccidentVasculairePrecoceDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Poids de naissance</label>
+	                            	<input type="text" class="form-control" name="PoidsNaissance">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Surchage pondérale dans l'enfance</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSurchagePonderaleEnfance" id="optionsSurchagePonderaleEnfance1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSurchagePonderaleEnfance" id="optionsSurchagePonderaleEnfance2" value="1">Oui
+	                            </label>
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Surchage pondérale dans l'adolescence</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSurchagePonderaleAdolescence" id="optionsSurchagePonderaleAdolescence1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsSurchagePonderaleAdolescence" id="optionsSurchagePonderaleAdolescence2" value="1">Oui
+	                            </label>
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Obésité dans l'enfance</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsObesiteEnfance" id="optionsObesiteEnfance1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsObesiteEnfance" id="optionsObesiteEnfance2" value="1">Oui
+	                            </label>
+                            </div>
+                            
+                            <div class="form-group">
+	                            <label>Obésité dans l'adolescence</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsObesiteAdolescence" id="optionsObesiteAdolescence1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsObesiteAdolescence" id="optionsObesiteAdolescence2" value="1">Oui
+	                            </label>
+                            </div>
+                            
+                            <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Nombre de kilos pris dans les 3 dernières années</label>
+	                            	<input type="text" class="form-control" name="KilosTroisAnnees">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Poids maximum atteint</label>
+	                            	<input type="text" class="form-control" name="PoidsMaximum">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>à quel âge</label>
+	                            	<input type="text" class="form-control" name="AgePoidsMaximum">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <label>Prise en charge nutritionnelle antérieure</label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsPriseEnChargeAnterieure" id="optionsPriseEnChargeAnterieure1" value="0" checked>Non
+	                            </label>
+	                            <label class="radio-inline">
+	                                <input type="radio" name="optionsPriseEnChargeAnterieure" id="optionsPriseEnChargeAnterieure2" value="1">Oui
+	                            </label>
+                            </div>
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Détails</label>
+	                            	<input type="text" class="form-control" name="optionsPriseEnChargeAnterieureDetails">
+                                </div>
+	                        </div>
+	                        
+	                        <div class="form-group">
+	                            <div class="form-group">
+	                           		<label>Commentaires</label>
+	                            	<input type="text" class="form-control" name="Commentaires">
+                                </div>
+	                        </div>
+	                        
+	                     </div>
+	                     <!-- /.panel-body -->
+	                   </div>
+	                   <!-- /.panel -->
+	               </div>
+	                <!-- /.col-lg-12 (nested) -->
+	                
 	               	<input id="envoyerForm" type="submit" class="btn btn-default" value="Enregistrer le dossier">
    				</form>
          </div>
