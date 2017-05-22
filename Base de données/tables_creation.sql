@@ -157,7 +157,42 @@ FOREIGN KEY (OrientationSimpss) REFERENCES OrientationSimpssValues(idvalue),
 FOREIGN KEY (OrientationExterne) REFERENCES OrientationExterneValues(idvalue)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE EntretienSport
+(
+IdEntretienSport MEDIUMINT,
+dateEntretien date,
+Taillecm  DECIMAL(10,2),
+Poidskg DECIMAL(10,2),
+IMC DECIMAL(10,1),
+Tourtaillecm  DECIMAL(10,2),
+autresBiometries varchar(255),
+commentaires varchar(255),
 
+IdPatient MEDIUMINT,
+
+PRIMARY KEY (IdEntretienSport),
+FOREIGN KEY (IdPatient) REFERENCES Patient(IdPatient)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE EntretienDiet
+(
+IdEntretienDiet MEDIUMINT,
+dateEntretien date,
+Taillecm  DECIMAL(10,2),
+Poidskg DECIMAL(10,2),
+IMC DECIMAL(10,1),
+
+PrisePetitDejeuner MEDIUMINT, -- evaluation nutri
+NombreFruitsEtLegumes varchar(255),
+Autre text,
+ComportementAlimentaire text,
+commentaires varchar(255),
+IdPatient MEDIUMINT,
+
+PRIMARY KEY (IdEntretienDiet),
+FOREIGN KEY (IdPatient) REFERENCES Patient(IdPatient),
+FOREIGN KEY (PrisePetitDejeuner) REFERENCES PrisePetitDejeunerValues(idvalue)
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE CompteRendu
 (

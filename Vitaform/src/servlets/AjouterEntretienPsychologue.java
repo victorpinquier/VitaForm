@@ -16,22 +16,13 @@ import javax.servlet.http.HttpSession;
 
 import beans.EntretienInitial;
 import beans.Patient;
-import beans.constraints.CursusValues;
-import beans.constraints.FaculteValues;
-import beans.constraints.OrigineFamilialeValues;
 import dao.PatientDAO;
-import dao.constraints.CursusValuesDAO;
-import dao.constraints.FaculteValuesDAO;
-import dao.constraints.LieuDeVieValuesDAO;
-import dao.constraints.OrientationValuesDAO;
-import dao.constraints.OrigineFamilialeValuesDAO;
-import dao.constraints.SituationFamilialeValuesDAO;
 import forms.AjouterEntretienInitialForm;
 import forms.PatientForm;
 import others.ConnexionBD;
 
-public class AjouterEntretienInitial extends HttpServlet {
-	public static final String VUE = "/WEB-INF/ajouterEntretienInitial.jsp";
+public class AjouterEntretienPsychologue extends HttpServlet {
+	public static final String VUE = "/WEB-INF/ajouterEntretienPsychologue.jsp";
     public static final String ACCES_PUBLIC     = "/connexion";
     public static final String ATT_SESSION_USER = "sessionUtilisateur";
     
@@ -50,14 +41,8 @@ public class AjouterEntretienInitial extends HttpServlet {
         } else {
         	 /* Affichage de la page restreinte */
         	try {
-                request.setAttribute("patients", PatientDAO.listePatients());
-                request.setAttribute("facultevalues", FaculteValuesDAO.listeFaculteValues());
-                request.setAttribute("cursusvalues", CursusValuesDAO.listeCursusValues());
-                request.setAttribute("origineFamilialeValues", OrigineFamilialeValuesDAO.listeOrigineFamilialeValues());
-                request.setAttribute("situationFamilialeValues", SituationFamilialeValuesDAO.listeSituationFamilialeValues());
-                request.setAttribute("lieuDeVieValues", LieuDeVieValuesDAO.listeLieuDeVieValues());
-                request.setAttribute("orientationValues", OrientationValuesDAO.listeOrientationValues());
-                
+                List<Patient> patients = PatientDAO.listePatients();
+                request.setAttribute("patients", patients);
             } catch (SQLException e) {
                 request.setAttribute("erreur", "Echec lors de la récupération.");
                 e.printStackTrace();
@@ -91,14 +76,14 @@ public class AjouterEntretienInitial extends HttpServlet {
         }
         
         /* Objet du formulaire */
-        AjouterEntretienInitialForm form = new AjouterEntretienInitialForm();
+        //AjouterEntretienInitialForm form = new AjouterEntretienInitialForm();
         
         /* Appel au traitement et à la validation de la requête, et récupération du bean en résultant */
-        EntretienInitial entretien = form.ajouterEntretienInitial(request);
+        //EntretienInitial entretien = form.ajouterEntretienInitial(request);
 
         /* Stockage du formulaire et du bean dans l'objet request */
-        request.setAttribute( "form", form );
-        request.setAttribute( "entretien", entretien );
+        //request.setAttribute( "form", form );
+        //request.setAttribute( "entretien", entretien );
 
         /* Transmission de la paire d'objets request/response à notre JSP */
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );

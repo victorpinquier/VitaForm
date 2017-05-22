@@ -140,9 +140,9 @@
                        		<div class="form-group">
 	                            <label>Prise du petit déjeuner</label>
 	                            <select class="form-control" name="choixPetitDejeuner">
-	                                <option id="choixBourse1" value="1">Oui</option>
-	                                <option id="choixBourse2" value="2">Non</option>
-	                                <option id="choixBourse3" value="3">En cours</option>
+	                                <c:forEach items="${prisePetitDejeunerValues}" var="prisePetitDejeuner">
+				                            	<option value="<c:out value="${prisePetitDejeuner.idValue}" />"> <c:out value="${prisePetitDejeuner.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        
@@ -190,11 +190,11 @@
                             </div>
                             
                             <div class="form-group">
-	                            <label>Résultats</label>
+	                            <label>Résultats QAPs</label>
 	                            <select class="form-control" name="choixResultats">
-	                                <option id="choixBourse1" value="1">Oui</option>
-	                                <option id="choixBourse2" value="2">Non</option>
-	                                <option id="choixBourse3" value="3">En cours</option>
+	                                <c:forEach items="${resultatsValues}" var="resultats">
+				                            	<option value="<c:out value="${resultats.idValue}" />"> <c:out value="${resultats.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                     </div>
@@ -310,27 +310,27 @@
                             <div class="form-group">
 	                            <label>Orientation Vitaform</label>
 	                            <select class="form-control" name="choixOrientationVitaformIndex">
-	                                <option id="choixBourse1" value="1">Oui</option>
-	                                <option id="choixBourse2" value="2">Non</option>
-	                                <option id="choixBourse3" value="3">En cours</option>
+	                                <c:forEach items="${orientationVitaformValues}" var="orientationVitaform">
+				                            	<option value="<c:out value="${orientationVitaform.idValue}" />"> <c:out value="${orientationVitaform.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        
 	                        <div class="form-group">
 	                            <label>Orientation Simpss</label>
 	                            <select class="form-control" name="choixOrientationSimpssIndex">
-	                                <option id="choixBourse1" value="1">Oui</option>
-	                                <option id="choixBourse2" value="2">Non</option>
-	                                <option id="choixBourse3" value="3">En cours</option>
+	                                <c:forEach items="${orientationSimpssValues}" var="orientationSimpss">
+				                            	<option value="<c:out value="${orientationSimpss.idValue}" />"> <c:out value="${orientationSimpss.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        
 	                        <div class="form-group">
 	                            <label>Orientation Externe</label>
 	                            <select class="form-control" name="choixOrientationExterneIndex">
-	                                <option id="choixBourse1" value="1">Oui</option>
-	                                <option id="choixBourse2" value="2">Non</option>
-	                                <option id="choixBourse3" value="3">En cours</option>
+	                                <c:forEach items="${orientationExterneValues}" var="orientationExterne">
+				                            	<option value="<c:out value="${orientationExterne.idValue}" />"> <c:out value="${orientationExterne.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
                             

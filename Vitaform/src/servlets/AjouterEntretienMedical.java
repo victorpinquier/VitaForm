@@ -16,7 +16,14 @@ import javax.servlet.http.HttpSession;
 
 import beans.EntretienInitial;
 import beans.Patient;
+import beans.constraints.PrisePetitDejeunerValues;
 import dao.PatientDAO;
+import dao.constraints.FaculteValuesDAO;
+import dao.constraints.OrientationExterneValuesDAO;
+import dao.constraints.OrientationSimpssValuesDAO;
+import dao.constraints.OrientationVitaformValuesDAO;
+import dao.constraints.PrisePetitDejeunerValuesDAO;
+import dao.constraints.ResultatsValuesDAO;
 import forms.AjouterEntretienInitialForm;
 import forms.PatientForm;
 import others.ConnexionBD;
@@ -41,8 +48,12 @@ public class AjouterEntretienMedical extends HttpServlet {
         } else {
         	 /* Affichage de la page restreinte */
         	try {
-                List<Patient> patients = PatientDAO.listePatients();
-                request.setAttribute("patients", patients);
+        		request.setAttribute("patients", PatientDAO.listePatients());
+                request.setAttribute("prisePetitDejeunerValues", PrisePetitDejeunerValuesDAO.listePrisePetitDejeunerValues());
+                request.setAttribute("resultatsValues", ResultatsValuesDAO.listeResultatsValues());
+                request.setAttribute("orientationVitaformValues", OrientationVitaformValuesDAO.listeOrientationVitaformValues());
+                request.setAttribute("orientationSimpssValues", OrientationSimpssValuesDAO.listeOrientationSimpssValues());
+                request.setAttribute("orientationExterneValues", OrientationExterneValuesDAO.listeOrientationExterneValues());
             } catch (SQLException e) {
                 request.setAttribute("erreur", "Echec lors de la récupération.");
                 e.printStackTrace();

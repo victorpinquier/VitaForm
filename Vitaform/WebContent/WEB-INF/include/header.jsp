@@ -63,7 +63,22 @@
 	                            <a href="${pageContext.request.contextPath}/entretien-initial">Entretien initial</a>
 	                        </li>
 	                        <li>
-	                            <a href="${pageContext.request.contextPath}/ajouter-entretien-medical">Entretien spécifique</a>
+	                            <a href="#">Entretien spécifique <span class="fa arrow"></span></a>
+	                            <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/ajouter-entretien-medical">Entretien médical</a>
+                                        </li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/ajouter-entretien-sport">Entretien sport</a>
+                                        </li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/ajouter-entretien-dieteticien">Entretien diététicien</a>
+                                        </li>
+                                        <li>
+                                            <a href="${pageContext.request.contextPath}/ajouter-entretien-psychologue">Entretien psychologue</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
 	                        </li>
                         </ul>
 					</li>

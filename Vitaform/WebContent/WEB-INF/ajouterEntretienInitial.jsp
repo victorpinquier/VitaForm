@@ -70,16 +70,17 @@
                        		<div class="form-group">
 	                            <label>Faculté</label>
 	                            <select class="form-control" name="choixFaculte">
-	                                <option id="choixFaculte1" value="1" >Test à enlever</option>
-		                            <c:forEach items="${resultatSet}" var="option">
-								        <option value="${resultatSet.key}" >${resultatSet.value}</option>
-								    </c:forEach>
+	                                <c:forEach items="${facultevalues}" var="faculte">
+				                            	<option value="<c:out value="${faculte.idValue}" />"> <c:out value="${faculte.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Niveau/Cursus</label>
 	                            <select class="form-control" name="choixCursus">
-	                                <option id="choixCursus1" value="1">Test à enlever</option>
+	                                <c:forEach items="${cursusvalues}" var="cursus">
+				                            	<option value="<c:out value="${cursus.idValue}" />"> <c:out value="${cursus.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
@@ -97,19 +98,25 @@
 	                        <div class="form-group">
 	                            <label>Origine familiale</label>
 	                            <select class="form-control" name="choixOrigineFam">
-	                                <option id="choixOrigineFam1" value="1">Test à enlever</option>
+	                                <c:forEach items="${origineFamilialeValues}" var="originefamiliale">
+				                            	<option value="<c:out value="${originefamiliale.idValue}" />"> <c:out value="${originefamiliale.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Situation familiale</label>
 	                            <select class="form-control" name="choixSituationFam">
-	                                <option id="choixSituationFam1" value="1">Test à enlever</option>
+	                                <c:forEach items="${situationFamilialeValues}" var="situationfamiliale">
+				                            	<option value="<c:out value="${situationfamiliale.idValue}" />"> <c:out value="${situationfamiliale.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
 	                            <label>Lieu de vie</label>
 	                            <select class="form-control" name="choixLieuVie">
-	                                <option id="choixLieuVie1" value="1">Test à enlever</option>
+	                                <c:forEach items="${lieuDeVieValues}" var="lieudevie">
+				                            	<option value="<c:out value="${lieudevie.idValue}" />"> <c:out value="${lieudevie.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">
@@ -167,7 +174,9 @@
                        		<div class="form-group">
 	                            <label>Orientation</label>
 	                            <select class="form-control" name="choixOrientation">
-	                                <option id="choixOrientation1" value="1">Test à enlever</option>
+	                                <c:forEach items="${orientationValues}" var="orientation">
+				                            	<option value="<c:out value="${orientation.idValue}" />"> <c:out value="${orientation.value}" />
+									</c:forEach>
 	                            </select>
 	                        </div>
 	                        <div class="form-group">

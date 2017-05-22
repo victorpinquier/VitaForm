@@ -61,6 +61,33 @@
   </servlet-mapping>
   
   <servlet>
+    <servlet-name>AjouterEntretienSport</servlet-name>
+    <servlet-class>servlets.AjouterEntretienSport</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterEntretienSport</servlet-name>
+    <url-pattern>/ajouter-entretien-sport</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AjouterEntretienDieteticien</servlet-name>
+    <servlet-class>servlets.AjouterEntretienDieteticien</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterEntretienDieteticien</servlet-name>
+    <url-pattern>/ajouter-entretien-dieteticien</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AjouterEntretienPsychologue</servlet-name>
+    <servlet-class>servlets.AjouterEntretienPsychologue</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjouterEntretienPsychologue</servlet-name>
+    <url-pattern>/ajouter-entretien-psychologue</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
     <servlet-name>Agenda</servlet-name>
     <servlet-class>servlets.Agenda</servlet-class>
   </servlet>
