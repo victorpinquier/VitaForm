@@ -68,7 +68,7 @@
 	                      </div>
           				  <div class="panel-body">
                        		<div class="form-group">
-	                            <label>Taille (en cm</label>
+	                            <label>Taille (en cm)</label>
 	                            <input type="text" class="form-control" id="taille" name="taille" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
@@ -76,18 +76,55 @@
 	                            <input type="text" class="form-control" id="poids" name="poids" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
-	                            <div class="form-group">
-	                           		<label>Tour de taille (en cm)</label>
-	                            	<input type="text" class="form-control" id="tourTaille" name="tourTaille" value="" maxlength="60">
-                                </div>
+	                            <label>IMC</label>
+	                            <input type="text" class="form-control" id="imc" name="imc" value="" maxlength="60">
 	                        </div>
-
-                            
                            
+                          </div>
                         </div>
-                      </div>
-                   	</div>
+                   	  </div>
                    	
+                   	<div class="col-lg-12">
+               			<div class="panel panel-default">
+	                      <div class="panel-heading">
+	                          Evaluation nutritionnelle
+	                      </div>
+          				  <div class="panel-body">
+                       		<div class="form-group">
+	                            <label>Prise du petit déjeuner</label>
+	                            <select class="form-control" name="choixPetitDejeuner">
+	                                <c:forEach items="${prisePetitDejeunerValues}" var="prisePetitDejeuner">
+				                            	<option value="<c:out value="${prisePetitDejeuner.idValue}" />"> <c:out value="${prisePetitDejeuner.value}" />
+									</c:forEach>
+	                            </select>
+	                        </div>
+	                        
+	                        <div class="form-group">
+                           		<label>nombre de Fruits et Légumes/j</label>
+                            	<input type="text" class="form-control" id="nombreFruitsEtLegumes" name="nombreFruitsEtLegumes" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>Autres</label>
+                            	<input type="text" class="form-control" id="autres" name="autres" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>comportement alimentaire particulier</label>
+                            	<input type="text" class="form-control" id="comportementAlimentaire" name="comportementAlimentaire" value="" maxlength="60">
+                            </div>
+                            
+                            <div class="form-group">
+                           		<label>Commentaires</label>
+                            	<input type="text" class="form-control" id="commentaires" name="commentaires" value="" maxlength="60">
+                            </div>
+	                        
+	                     </div>
+	                     <!-- /.panel-body -->
+	                   </div>
+	                   <!-- /.panel -->
+	               </div>
+	                <!-- /.col-lg-12 (nested) -->
                    	
 	                
 	               	<input id="envoyerForm" type="submit" class="btn btn-default" value="Enregistrer le dossier">

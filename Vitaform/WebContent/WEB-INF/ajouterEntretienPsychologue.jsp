@@ -68,7 +68,7 @@
 	                      </div>
           				  <div class="panel-body">
                        		<div class="form-group">
-	                            <label>Taille (en cm</label>
+	                            <label>Taille (en cm)</label>
 	                            <input type="text" class="form-control" id="taille" name="taille" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">

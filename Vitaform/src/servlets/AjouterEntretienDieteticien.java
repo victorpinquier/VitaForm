@@ -17,6 +17,7 @@ import javax.servlet.http.HttpSession;
 import beans.EntretienInitial;
 import beans.Patient;
 import dao.PatientDAO;
+import dao.constraints.PrisePetitDejeunerValuesDAO;
 import forms.AjouterEntretienInitialForm;
 import forms.PatientForm;
 import others.ConnexionBD;
@@ -41,8 +42,8 @@ public class AjouterEntretienDieteticien extends HttpServlet {
         } else {
         	 /* Affichage de la page restreinte */
         	try {
-                List<Patient> patients = PatientDAO.listePatients();
-                request.setAttribute("patients", patients);
+        		request.setAttribute("patients", PatientDAO.listePatients());
+                request.setAttribute("prisePetitDejeunerValues", PrisePetitDejeunerValuesDAO.listePrisePetitDejeunerValues());
             } catch (SQLException e) {
                 request.setAttribute("erreur", "Echec lors de la récupération.");
                 e.printStackTrace();

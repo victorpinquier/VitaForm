@@ -67,8 +67,8 @@
 	                          Examen
 	                      </div>
           				  <div class="panel-body">
-                       		<div class="form-group">
-	                            <label>Taille (en cm</label>
+	                      	<div class="form-group">
+	                            <label>Taille (en cm)</label>
 	                            <input type="text" class="form-control" id="taille" name="taille" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
@@ -76,14 +76,23 @@
 	                            <input type="text" class="form-control" id="poids" name="poids" value="" maxlength="60">
 	                        </div>
 	                        <div class="form-group">
-	                            <div class="form-group">
-	                           		<label>Tour de taille (en cm)</label>
-	                            	<input type="text" class="form-control" id="tourTaille" name="tourTaille" value="" maxlength="60">
-                                </div>
+	                            <label>IMC</label>
+	                            <input type="text" class="form-control" id="imc" name="imc" value="" maxlength="60">
 	                        </div>
-
-                            
-                           
+	                        <div class="form-group">
+	                           	<label>Tour de taille (en cm)</label>
+	                            <input type="text" class="form-control" id="tourTaille" name="tourTaille" value="" maxlength="60">
+	                        </div>
+	                        <div class="form-group">
+	                           	<label>Autres biométries</label>
+	                            <input type="text" class="form-control" id="autresBiometrie" name="autresBiometrie" value="" maxlength="60">
+	                        </div>
+	                        <div class="form-group">
+	                           	<label>Commentaires</label>
+	                            <input type="text" class="form-control" id="commentaires" name="commentaires" value="" maxlength="60">
+	                        </div>
+	                        
+	                     </div>
                         </div>
                       </div>
                    	</div>
