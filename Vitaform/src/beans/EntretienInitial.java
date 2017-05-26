@@ -49,11 +49,13 @@ public class EntretienInitial {
 	private String parentsObeseDetails;
 	private boolean parentsDiabete;
 	private String parentsDiabeteDetails;
+	private boolean parentsHyperlipidemie;
+	private String parentsHyperlipidemieDetails;
 	private boolean accidentVasculairePrecoce;
 	private String accidentVasculairePrecoceDetails;
 	private String poidsNaissance;
-	private boolean surchagePonderaleEnfance;
-	private boolean surchagePonderaleAdolescence;
+	private boolean surchargePonderaleEnfance;
+	private boolean surchargePonderaleAdolescence;
 	private boolean obesiteEnfance;
 	private boolean obesiteAdolescence;
 	private String kilosTroisAnnees;
@@ -363,17 +365,17 @@ public class EntretienInitial {
 	public void setPoidsNaissance(String poidsNaissance) {
 		this.poidsNaissance = poidsNaissance;
 	}
-	public boolean isSurchagePonderaleEnfance() {
-		return surchagePonderaleEnfance;
+	public boolean isSurchargePonderaleEnfance() {
+		return surchargePonderaleEnfance;
 	}
-	public void setSurchagePonderaleEnfance(boolean surchagePonderaleEnfance) {
-		this.surchagePonderaleEnfance = surchagePonderaleEnfance;
+	public void setSurchargePonderaleEnfance(boolean surchagePonderaleEnfance) {
+		this.surchargePonderaleEnfance = surchagePonderaleEnfance;
 	}
-	public boolean isSurchagePonderaleAdolescence() {
-		return surchagePonderaleAdolescence;
+	public boolean isSurchargePonderaleAdolescence() {
+		return surchargePonderaleAdolescence;
 	}
-	public void setSurchagePonderaleAdolescence(boolean surchagePonderaleAdolescence) {
-		this.surchagePonderaleAdolescence = surchagePonderaleAdolescence;
+	public void setSurchargePonderaleAdolescence(boolean surchargePonderaleAdolescence) {
+		this.surchargePonderaleAdolescence = surchargePonderaleAdolescence;
 	}
 	public boolean isObesiteEnfance() {
 		return obesiteEnfance;
@@ -423,5 +425,18 @@ public class EntretienInitial {
 	public void setCommentaires(String commentaires) {
 		this.commentaires = commentaires;
 	}
+	public boolean isParentsHyperlipidemie() {
+		return parentsHyperlipidemie;
+	}
+	public void setParentsHyperlipidemie(boolean parentsHyperlipidemie) {
+		this.parentsHyperlipidemie = parentsHyperlipidemie;
+	}
+	public String getParentsHyperlipidemieDetails() {
+		return parentsHyperlipidemieDetails;
+	}
+	public void setParentsHyperlipidemieDetails(String parentsHyperlipidemieDetails) {
+		this.parentsHyperlipidemieDetails = parentsHyperlipidemieDetails;
+	}
+	
 	
 }

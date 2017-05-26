@@ -82,8 +82,8 @@ AccidentVasculairePrecoce boolean,
 AccidentVasculairePrecoceDetails text,
 
 PoidsNaissance varchar(255), -- histoire poids
-SurchagePonderaleEnfance boolean,
-surchagePonderaleAdolescence boolean,
+SurchargePonderaleEnfance boolean,
+surchargePonderaleAdolescence boolean,
 ObesiteEnfance boolean,
 ObesiteAdolescence boolean,
 KilosTroisAnnees varchar(255),
