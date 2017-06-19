@@ -29,10 +29,20 @@ public class DossierMedicalDAO {
 	        statement = connexion.createStatement();
 	        
 	        String selectSQL = "Select TailleCm, PoidsKg, IMC, TourTailleCm, TA, HyperAndrogenie, HyperAndrogenieDetails"
-	        		+ " HyperCortisime, HyperAndrogenieDetails, HyperCortisime, HyperCortisimeDetails, Dysthyroidie,"
-	        		+ " DysthyroidieDetails, p.value AS PrisePetitDejeuner"
-	        		+ " From DossierMedical d, PrisePetitDejeunerValues p"
-	        		+ " Where d.prisePetitDejeuner = p.value"
+	        		+ " HyperCortisime, HyperAndrogenieDetails, HyperCorticisme, HyperCorticismeDetails, Dysthyroidie,"
+	        		+ " DysthyroidieDetails, p.value AS PrisePetitDejeuner, NombreFruitsEtLegumes, Autre,"
+	        		+ " ComportementAlimentaire, Marche, QAP, r.value AS Resultats, SigneDepressif,"
+	        		+ " SigneDepressifDetails, SuiviExistant, SuiviExistantDetails, EVASommeil, EVAStress,"
+	        		+ " SensationIsolement, SensationIsolementDetails, TestScoff, ResultatsScoff, Findrisk,"
+	        		+ " SyndromeMetabolique, Motivation, Objectif, ov.value AS OrientationVitaform, "
+	        		+ " os.value AS OrientationSimpss, oe.value AS OrientationExterne"
+	        		+ " From DossierMedical d, PrisePetitDejeunerValues p, ResultatsValues r, OrientationVitaformValues ov,"
+	        		+ " OrientationSimpssValues os, OrientationExterneValues oe"
+	        		+ " Where d.IdDossierMedical = p.idValue"
+	        		+ " And d.IdDossierMedical = r.idValue"
+	        		+ " And d.IdDossierMedical = ov.idValue"
+	        		+ " And d.IdDossierMedical = os.idValue"
+	        		+ " And d.IdDossierMedical = oe.idValue"
 	        		+ " And d.IdPatient = ?;";
 	        
 	        PreparedStatement preparedStatement = connexion.prepareStatement(selectSQL);
@@ -49,11 +59,35 @@ public class DossierMedicalDAO {
 	        	row.setTA(resultatSet.getString("TA"));
 	        	row.setHyperAndrogenie(resultatSet.getBoolean("HyperAndrogenie"));
 	        	row.setHyperAndrogenieDetails(resultatSet.getString("HyperAndrogenieDetails"));
-	        	row.setHyperCorticisme(resultatSet.getBoolean("HyperCortisime"));
-	        	row.setHyperCorticismeDetails(resultatSet.getString("HyperCortisimeDetails"));
+	        	row.setHyperCorticisme(resultatSet.getBoolean("HyperCorticisme"));
+	        	row.setHyperCorticismeDetails(resultatSet.getString("HyperCorticismeDetails"));
 	        	row.setDysthyroidie(resultatSet.getBoolean("Dysthyroidie"));
 	        	row.setDysthyroidieDetails(resultatSet.getString("DysthyroidieDetails"));
 	        	row.setPrisePetitDejeuner(resultatSet.getString("PrisePetitDejeuner"));
+	        	
+	        	row.setNombreFruitsEtLegumes(resultatSet.getString("NombreFruitsEtLegumes"));
+	        	row.setAutre(resultatSet.getString("Autre"));
+	        	row.setComportementAlimentaire(resultatSet.getString("ComportementAlimentaire"));
+	        	row.setMarche(resultatSet.getBoolean("Marche"));
+	        	row.setQAP(resultatSet.getString("QAP"));
+	        	row.setResultats(resultatSet.getString("Resultats"));
+	        	row.setSigneDepressif(resultatSet.getBoolean("SigneDepressif"));
+	        	row.setSigneDepressifDetails(resultatSet.getString("SigneDepressifDetails"));
+	        	row.setSuiviExistant(resultatSet.getBoolean("SuiviExistant"));
+	        	row.setSuiviExistantDetails(resultatSet.getString("SuiviExistantDetails"));
+	        	row.setEVASommeil(resultatSet.getString("EVASommeil"));
+	        	row.setEVAStress(resultatSet.getString("EVAStress"));
+	        	row.setSensationIsolement(resultatSet.getBoolean("SensationIsolement"));
+	        	row.setSensationIsolementDetails(resultatSet.getString("SensationIsolementDetails"));
+	        	row.setTestScoff(resultatSet.getString("TestScoff"));
+	        	row.setResultatsScoff(resultatSet.getString("ResultatsScoff"));
+	        	row.setFindrisk(resultatSet.getString("Findrisk"));
+	        	row.setSyndromeMetabolique(resultatSet.getBoolean("SyndromeMetabolique"));
+	        	row.setMotivation(resultatSet.getString("Motivation"));
+	        	row.setObjectif(resultatSet.getString("Objectif"));
+	        	row.setOrientationVitaform(resultatSet.getString("OrientationVitaform"));
+	        	row.setOrientationSimpss(resultatSet.getString("OrientationSimpss"));
+	        	row.setOrientationExterne(resultatSet.getString("OrientationExterne"));
 	        	
 	        	dossiersMedical.add(row);
 	        }

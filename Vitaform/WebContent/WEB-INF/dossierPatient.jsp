@@ -138,42 +138,56 @@
                         <!-- .panel-heading -->
                         <div class="panel-body">
                             <div class="panel-group" id="accordion">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Entretien #1</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                
+                                <c:forEach items="${dossierMedical}" var="entretienMed">
+                                	<div class="panel panel-default">
+	                                    <div class="panel-heading">
+	                                        <h4 class="panel-title">
+	                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<c:out value="${entretienMed.idDossierMedical}" />">Entretien #<c:out value="${entretienMed.idDossierMedical}" /></a>
+	                                        </h4>
+	                                    </div>
+                                    <div id="collapse<c:out value="${entretienMed.idDossierMedical}" />" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Entretien #2</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Entretien #3</a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </div>
-                                    </div>
-                                </div>
+                                        	<p> Taille en cm : <c:out value="${entretienMed.tailleCm}" /></p>
+                                        	<p> Poids en kg : <c:out value="${entretienMed.poidsKg}" /></p>
+                                        	<p> IMC : <c:out value="${entretienMed.IMC}" /></p>
+                                        	<p> Tour de taille en cm : <c:out value="${entretienMed.tourTailleCm}" /></p>
+                                        	<p> T.A en mmHg : <c:out value="${entretienMed.TA}" /></p>
+                                        	<p> Signes d’hyperAndrogénie : <c:out value="${entretienMed.hyperAndrogenie ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails  : <c:out value="${entretienMed.hyperAndrogenieDetails}" /></p>
+                                        	<p> Signes d’hypercorticisme : <c:out value="${entretienMed.hyperCorticisme ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails : <c:out value="${entretienMed.hyperCorticismeDetails}" /></p>
+                                        	<p> Signes de dysthyroïdie : <c:out value="${entretienMed.dysthyroidie ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails : <c:out value="${entretienMed.dysthyroidieDetails}" /></p>
+                                        	<p> prise du petit déjeuner : <c:out value="${entretienMed.prisePetitDejeuner}" /></p>
+                                        	<p> nombre de Fruits et Légumes/j : <c:out value="${entretienMed.nombreFruitsEtLegumes}" /></p>
+                                        	<p> autres  : <c:out value="${entretienMed.autre}" /></p>
+                                        	<p> comportement alimentaire particulier : <c:out value="${entretienMed.comportementAlimentaire}" /></p>
+                                        	<p> Marche ou équiv ≥ 30 min/j : <c:out value="${entretienMed.marche ? 'Oui' : 'Non'}" /></p>
+                                        	<p> QAPs : <c:out value="${entretienMed.QAP}" /></p>
+                                        	<p> Faculte : <c:out value="${entretienMed.resultats}" /></p>
+                                        	<p> Signes  dépressifs : <c:out value="${entretienMed.signeDepressif ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails : <c:out value="${entretienMed.signeDepressifDetails}" /></p>
+                                        	<p> Suivi existant : <c:out value="${entretienMed.suiviExistant ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails : <c:out value="${entretienMed.suiviExistantDetails}" /></p>
+                                        	<p> EVA Sommeil : <c:out value="${entretienMed.EVASommeil}" /></p>
+                                        	<p> EVA STRESS : <c:out value="${entretienMed.EVAStress}" /></p>
+                                        	<p> Sensation d’isolement : <c:out value="${entretienMed.sensationIsolement ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Détails : <c:out value="${entretienMed.sensationIsolementDetails}" /></p>
+                                        	<p> Test de Scoff  : <c:out value="${entretienMed.testScoff}" /></p>
+                                        	<p> Résultat de Scoff  : <c:out value="${entretienMed.resultatsScoff}" /></p>
+                                        	<p> Findrisk : <c:out value="${entretienMed.findrisk}" /></p>
+                                        	<p> Syndrome métabolique : <c:out value="${entretienMed.syndromeMetabolique ? 'Oui' : 'Non'}" /></p>
+                                        	<p> Motivation : <c:out value="${entretienMed.motivation}" /></p>
+                                        	<p> Objectif : <c:out value="${entretienMed.objectif}" /></p>
+                                        	<p> Orientation VITAFORM : <c:out value="${entretienMed.orientationVitaform}" /></p>
+                                        	<p> Orientation SIMPPS : <c:out value="${entretienMed.orientationSimpss}" /></p>
+                                        	<p> Orientation Externe : <c:out value="${entretienMed.orientationExterne}" /></p>
+										</div>
+									</div >
+								</div>
+								</c:forEach>
+								
                             </div>
                         </div>
                         <!-- .panel-body -->

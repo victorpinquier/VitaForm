@@ -15,11 +15,11 @@ public class DossierMedical {
 	private String dysthyroidieDetails;
 	private String prisePetitDejeuner;
 	private String nombreFruitsEtLegumes;
-	private String Autre;
+	private String autre;
 	private String comportementAlimentaire;
 	private boolean marche;
 	private String QAP;
-	private int resultats;
+	private String resultats;
 	private boolean signeDepressif;
 	private String signeDepressifDetails;
 	private boolean suiviExistant;
@@ -29,14 +29,14 @@ public class DossierMedical {
 	private boolean sensationIsolement;
 	private String sensationIsolementDetails;
 	private String testScoff;
-	private String resultatScoff;
-	private String Finrisk;
+	private String resultatsScoff;
+	private String findrisk;
 	private boolean syndromeMetabolique;
 	private String motivation;
 	private String objectif;
-	private int orientationVitaform;
-	private int orientationSimpss;
-	private int orientationExterne;
+	private String orientationVitaform;
+	private String orientationSimpss;
+	private String orientationExterne;
 	private int idPatient;
 	
 	public int getIdDossierMedical() {
@@ -124,10 +124,10 @@ public class DossierMedical {
 		this.nombreFruitsEtLegumes = nombreFruitsEtLegumes;
 	}
 	public String getAutre() {
-		return Autre;
+		return autre;
 	}
 	public void setAutre(String autre) {
-		Autre = autre;
+		this.autre = autre;
 	}
 	public String getComportementAlimentaire() {
 		return comportementAlimentaire;
@@ -145,12 +145,12 @@ public class DossierMedical {
 		return QAP;
 	}
 	public void setQAP(String qAP) {
-		QAP = qAP;
+		this.QAP = qAP;
 	}
-	public int getResultats() {
+	public String getResultats() {
 		return resultats;
 	}
-	public void setResultats(int resultats) {
+	public void setResultats(String resultats) {
 		this.resultats = resultats;
 	}
 	public boolean isSigneDepressif() {
@@ -181,13 +181,13 @@ public class DossierMedical {
 		return EVASommeil;
 	}
 	public void setEVASommeil(String eVASommeil) {
-		EVASommeil = eVASommeil;
+		this.EVASommeil = eVASommeil;
 	}
 	public String getEVAStress() {
 		return EVAStress;
 	}
 	public void setEVAStress(String eVAStress) {
-		EVAStress = eVAStress;
+		this.EVAStress = eVAStress;
 	}
 	public boolean isSensationIsolement() {
 		return sensationIsolement;
@@ -207,17 +207,17 @@ public class DossierMedical {
 	public void setTestScoff(String testScoff) {
 		this.testScoff = testScoff;
 	}
-	public String getResultatScoff() {
-		return resultatScoff;
+	public String getResultatsScoff() {
+		return resultatsScoff;
 	}
-	public void setResultatScoff(String resultatScoff) {
-		this.resultatScoff = resultatScoff;
+	public void setResultatsScoff(String resultatsScoff) {
+		this.resultatsScoff = resultatsScoff;
 	}
-	public String getFinrisk() {
-		return Finrisk;
+	public String getFindrisk() {
+		return findrisk;
 	}
-	public void setFinrisk(String finrisk) {
-		Finrisk = finrisk;
+	public void setFindrisk(String findrisk) {
+		this.findrisk = findrisk;
 	}
 	public boolean isSyndromeMetabolique() {
 		return syndromeMetabolique;
@@ -237,22 +237,22 @@ public class DossierMedical {
 	public void setObjectif(String objectif) {
 		this.objectif = objectif;
 	}
-	public int getOrientationVitaform() {
+	public String getOrientationVitaform() {
 		return orientationVitaform;
 	}
-	public void setOrientationVitaform(int orientationVitaform) {
+	public void setOrientationVitaform(String orientationVitaform) {
 		this.orientationVitaform = orientationVitaform;
 	}
-	public int getOrientationSimpss() {
+	public String getOrientationSimpss() {
 		return orientationSimpss;
 	}
-	public void setOrientationSimpss(int orientationSimpss) {
+	public void setOrientationSimpss(String orientationSimpss) {
 		this.orientationSimpss = orientationSimpss;
 	}
-	public int getOrientationExterne() {
+	public String getOrientationExterne() {
 		return orientationExterne;
 	}
-	public void setOrientationExterne(int orientationExterne) {
+	public void setOrientationExterne(String orientationExterne) {
 		this.orientationExterne = orientationExterne;
 	}
 	public int getIdPatient() {

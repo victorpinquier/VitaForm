@@ -13,7 +13,7 @@ import beans.EntretienInitial;
 import beans.Patient;
 import others.ConnexionBD;
 
-public class EntretienInitialDAO {
+public class EntretienSportDAO {
 	
 	public static EntretienInitial getEntretienInitial(int idEntretienInitial) throws SQLException {
 		Connection connexion = null;
